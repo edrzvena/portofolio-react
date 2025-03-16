@@ -79,13 +79,15 @@ const App = () => {
           <h1 className="text-2xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">My Portfolio</h1>
           <div className="flex gap-6">
             {['About', 'Skills', 'Projects', 'Contact'].map(section => (
-              <a
-                key={section}
-                href={`#${section.toLowerCase()}`}
-                className="text-transparent bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text hover:text-transparent hover:bg-clip-text transition duration-300"
-              >
-                {section}
-              </a>
+              <div className="relative group" key={section}>
+                <a
+                  href={`#${section.toLowerCase()}`}
+                  className="text-transparent bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text transition duration-300"
+                >
+                  {section}
+                </a>
+                <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-gradient-to-r from-green-400 to-blue-500 transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+              </div>
             ))}
           </div>
         </div>
@@ -95,17 +97,17 @@ const App = () => {
       <section className="min-h-screen flex items-center justify-center text-center">
         <div>
           <h1 className="text-6xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-4">
-            Hi, I'm <span className="inline-block overflow-hidden whitespace-nowrap animate-typing">[Pedro]</span>
+            Hi, I'm <span className="inline-block overflow-hidden whitespace-nowrap animate-typing">Pedro Widya</span>
           </h1>
-          <p className="text-xl text-gray-400">Full-Stack Developer | Tech Enthusiast | Problem Solver</p>
+          <p className="text-xl text-gray-400">Full-Stack Developer | UI/UX Designer | IT Support</p>
           <div className="mt-8 flex justify-center">
-            <a href="#projects" className="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent font-semibold py-3 px-6 rounded-full shadow-lg z-50">View My Work</a>
+            <a href="#about" className="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent font-semibold py-3 px-6 rounded-full shadow-lg z-50">View My Profile</a>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="min-h-screen p-16">
+      <section id="about" className="min-h-screen p-16 bg-gray-900">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-8">About Me</h2>
           <div className="grid grid-cols-1 gap-8 items-center">
@@ -113,8 +115,8 @@ const App = () => {
               <img src="/images/myself.jpg" alt="Profile" className="w-64 h-64 rounded-full mx-auto shadow-lg" />
             </div>
             <div className="text-lg text-gray-400">
-              <p>Saya adalah seorang Full-Stack Developer dengan passion di bidang pengembangan web dan teknologi...</p>
-              <p className="mt-4">Selain coding, saya juga suka berkolaborasi dengan tim...</p>
+            <p className="text-center mx-auto mb-4">Saya adalah seorang lulusan baru di bidang IT yang memiliki minat besar di pengembangan web. Selama kuliah, saya telah mempelajari berbagai teknologi web dan saya siap untuk mengembangkan kemampuan saya lebih lanjut.</p>
+              <p className="text-center mx-auto mb-4">Saya bersemangat untuk memulai karir saya di bidang pengembangan web dan saya siap untuk bekerja sama dengan tim untuk menciptakan solusi-solusi inovatif.</p>
             </div>
           </div>
         </div>
@@ -123,17 +125,44 @@ const App = () => {
       {/* Skills Section */}
       <section id="skills" className="min-h-screen p-16">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-8 text-center">Skills</h2>
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-8 text-center">
+            Skills
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { title: 'Python (Django, Flask)', percentage: '95%' },
-              { title: 'JavaScript (React, Node.js)', percentage: '80%' }
-            ].map(skill => (
-              <div key={skill.title} className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg border border-white border-opacity-20 p-6 flex flex-col items-center">
-                <h3 className="text-xl font-bold mb-4">{skill.title}</h3>
-                <div className="relative w-32 h-32">
-                  <div className={`w-full h-full rounded-full bg-[conic-gradient(#00aaf9_${skill.percentage === '95%' ? '95%' : '80%'},#000000_${skill.percentage === '95%' ? '95%' : '80%'},#2d3748_0%)]`} style={{ WebkitMask: 'radial-gradient(farthest-side, transparent calc(100% - 8px), black calc(100% - 7px))', animation: 'fill 1.5s ease-in-out forwards' }}></div>
-                  <span className="text-xl text-gray-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">{skill.percentage}</span>
+              { title: 'Python (Django)', percentage: 95 },
+              { title: 'JavaScript (React)', percentage: 80 },
+              { title: 'Database (PostgreSQL, MySQL)', percentage: 70 },
+              { title: 'CSS (Tailwind, Bootstrap)', percentage: 80 },
+              { title: 'UI/UX (Figma)', percentage: 80 }
+            ].map((skill) => (
+              <div
+                key={skill.title}
+                className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg border border-white border-opacity-20 p-6 flex flex-col items-center shadow-lg transition-transform transform hover:scale-110 duration-300"
+              >
+                <h3 className="text-xl font-bold mb-4 text-gray-200">{skill.title}</h3>
+                <div className="relative size-40">
+                  <svg className="size-full -rotate-90" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                    {/* Background Circle */}
+                    <circle cx="18" cy="18" r="16" fill="none" className="stroke-current text-gray-200 dark:text-neutral-700" strokeWidth="2"></circle>
+                    {/* Progress Circle */}
+                    <circle
+                      cx="18"
+                      cy="18"
+                      r="16"
+                      fill="none"
+                      className="stroke-current text-blue-600 dark:text-blue-500"
+                      strokeWidth="2"
+                      strokeDasharray="100"
+                      strokeDashoffset={`${100 - skill.percentage}`}
+                      strokeLinecap="round"
+                      style={{ transition: 'stroke-dashoffset 1.5s ease-in-out' }}
+                    ></circle>
+                  </svg>
+                  {/* Percentage Text */}
+                  <div className="absolute top-1/2 start-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                    <span className="text-center text-2xl font-bold text-blue-600 dark:text-blue-500">{skill.percentage}%</span>
+                  </div>
                 </div>
               </div>
             ))}
@@ -147,9 +176,38 @@ const App = () => {
           <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-8">Experience</h2>
           <div className="flex flex-col gap-8">
             {[
-              { title: 'Web Developer Intern', company: 'PT. Teknologi Maju Jaya', date: 'Jun 2019 - Des 2019', tasks: ['Mengembangkan aplikasi web internal menggunakan Django dan React.', 'Mengoptimalkan performa database.', 'Berpartisipasi dalam code review.'] },
-              { title: 'Freelance Web Developer', company: 'Self-Employed', date: 'Jan 2020 - Sekarang', tasks: ['Membangun website untuk klien.', 'Mengintegrasikan sistem pembayaran.', 'Memberikan dukungan teknis.'] },
-              { title: 'Security Officer (Part-Time)', company: 'PT. Keamanan Terpercaya', date: 'Mar 2018 - Des 2019', tasks: ['Menangani sistem keamanan.', 'Memastikan keamanan lingkungan kerja.'] }
+              {
+                "title": "Administrasi",
+                "company": "Toko Purnama",
+                "date": "2019 - 2020",
+                "tasks": [
+                  "Mengelola operasional toko",
+                  "Memberikan layanan pelanggan yang luar biasa",
+                  "Memelihara manajemen gudang stok yang efisien"
+                ]
+              },
+
+              {
+                "title": "Marketing Online",
+                "company": "PT. Usaha Inti Bersama",
+                "date": "2020 - 2022",
+                "tasks": [
+                  "Mengelola toko online",
+                  "Membuat konten digital yang menarik",
+                  "Menganalisis tren pasar untuk mengoptimalkan penjualan"
+                ]
+              },
+
+              {
+                "title": "Security Officer",
+                "company": "PT. GFC Terpadu",
+                "date": "2022 - present",
+                "tasks": [
+                  "Memantau dan menganalisis sistem keamanan",
+                  "Memastikan kinerja optimal dan integritas data"
+                ]
+              }
+
             ].map(exp => (
               <div key={exp.title} className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg border border-white border-opacity-20 p-6">
                 <h3 className="text-2xl font-bold mb-2">{exp.title}</h3>
@@ -170,8 +228,20 @@ const App = () => {
           <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-8">Education</h2>
           <div className="flex flex-col gap-8">
             {[
-              { title: 'Sarjana Teknik Komputer', institution: 'Universitas XYZ', date: '2015 - 2019', details: ['IPK: 3.8/4.0', 'Fokus pada pengembangan web.', 'Aktif di organisasi mahasiswa.'] },
-              { title: 'Proyek Skripsi', institution: 'Sistem Manajemen Inventaris Berbasis Web', date: '2018 - 2019', details: ['Membangun sistem inventaris.', 'Fitur manajemen stok dan laporan.'] }
+              { 
+                title: 'Sarjana Teknik Komputer', 
+                institution: 'Universitas Buddhi Dharma', 
+                date: '2020 - 2024', 
+                details: ['IPK: 3.51', 'Fokus pada pengembangan web menggunakan framework Laravel', 'Pengembangan NLP, Data Mining dan Text Mining.'] 
+              },
+
+              { 
+                title: 'Proyek Skripsi', 
+                institution: 'Implementasi sentimen emosi pada lirik lagu menggunakan Bot Discord dengan metode analisis sentimen berbasis leksikon', 
+                date: '2023 - 2024', 
+                details: ['Mengembangkan Bot Discord untuk memutar lagu', 'Mengembangkan Bot Discord untuk menganalisis sentimen emosi lagu', 'Mengembangkan sistem kontrol Next, Previous, Pause, Shut Down, dan Show Lyric pada Bot Discord.'] 
+              }
+              
             ].map(edu => (
               <div key={edu.title} className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg border border-white border-opacity-20 p-6">
                 <h3 className="text-2xl font-bold mb-2">{edu.title}</h3>
@@ -192,9 +262,18 @@ const App = () => {
           <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-8">Projects</h2>
           <div className="grid grid-cols-1 gap-8">
             {[
-              { title: 'E-commerce Platform', description: 'Platform e-commerce dengan fitur lengkap.', image: '/images/project1.jpg' },
-              { title: 'Blog Platform', description: 'Platform blog dengan fitur multi-user.', image: '/images/project2.jpg' },
-              { title: 'Task Management App', description: 'Aplikasi manajemen tugas dengan fitur kolaborasi.', image: '/images/project3.jpg' }
+              { 
+                title: 'Bot Discord', 
+                description: 'Bot untuk memutar Musik di Platform Discord.', 
+                image: '/images/music-discord.png' 
+              },
+
+              { 
+                title: 'Implementation Of Text Mining For Emotion Detection', 
+                description: 'Mendeteksi sentimen emosi dari teks menggunakan teknik text mining untuk menganalisis dan mengidentifikasi emosi yang terkandung dalam kalimat.', 
+                image: '/images/Sentiment.jpeg' 
+              },
+
             ].map(project => (
               <div key={project.title} className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg border border-white border-opacity-20 p-6">
                 <img src={project.image} alt={project.title} className="rounded-lg mb-4" />
@@ -209,19 +288,35 @@ const App = () => {
 
       {/* Contact Section */}
       <section id="contact" className="min-h-screen p-16 bg-gray-900">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-8">Let's Connect!</h2>
-          <p className="text-lg text-gray-400 mb-8">Tertarik bekerja sama atau sekedar ngobrol? Jangan ragu untuk menghubungi saya!</p>
-          <div className="flex justify-center gap-6">
-            {['youremail@example.com', 'https://linkedin.com/in/yourprofile', 'https://github.com/yourprofile'].map((link, index) => (
-              <a key={index} href={link} className="text-blue-400 hover:text-blue-300">{index === 0 ? '📧 Email' : index === 1 ? '🔗 LinkedIn' : '🐱 GitHub'}</a>
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-8">
+            Let's Connect!
+          </h2>
+          <p className="text-lg text-gray-400 mb-8">
+            Tertarik bekerja sama atau sekedar ngobrol? Jangan ragu untuk menghubungi saya!
+          </p>
+          <div className="flex justify-center gap-6 relative z-10">
+            {[
+              { name: '📧 Email', link: 'mailto:widyadharta@gmail.com' },
+              { name: '🔗 LinkedIn', link: 'https://www.linkedin.com/in/pedro-widyadharta-773209350/' },
+              { name: '🐱 GitHub', link: 'https://github.com/edrzvena' },
+            ].map((item, index) => (
+              <a
+                key={index}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 text-lg font-semibold relative z-20"
+              >
+                {item.name}
+              </a>
             ))}
           </div>
         </div>
       </section>
 
       <footer className="p-8 text-center text-gray-400">
-        <p>© 2024 [Your Name]. All rights reserved.</p>
+        <p>© 2025 Pedro Widya. All rights reserved.</p>
       </footer>
     </div>
   );
