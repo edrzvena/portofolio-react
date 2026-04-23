@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import './index.css';
+import emailjs from '@emailjs/browser'
 
 const App = () => {
   // Referensi untuk elemen blob
@@ -32,70 +33,91 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-      let currentScroll = 0; // Menyimpan posisi scroll saat ini
-      let requestId; // Untuk menyimpan ID dari requestAnimationFrame
-  
-      const handleScroll = () => {
-        const newScroll = window.pageYOffset; // Mendapatkan posisi scroll baru
-        const scrollDelta = newScroll - currentScroll; // Menghitung perubahan scroll
-        currentScroll = newScroll; // Memperbarui posisi scroll saat ini
-  
-        // Menggerakkan setiap blob berdasarkan posisi scroll
-        blobRefs.current.forEach((blob, index) => {
-          const initialPos = initialPositions[index];
-  
-          // Menghitung pergerakan dalam arah X dan Y
-          const xOffset = Math.sin(newScroll / 100 + index * 0.5) * 340; // Pergerakan horizontal
-          const yOffset = Math.cos(newScroll / 100 + index * 0.5) * 40; // Pergerakan vertikal
-  
-          const x = initialPos.x + xOffset; // Posisi X baru
-          const y = initialPos.y + yOffset; // Posisi Y baru
-  
-          // Menerapkan transformasi dengan transisi halus
-          blob.style.transform = `translate(${x}px, ${y}px)`;
-          blob.style.transition = "transform 1.4s ease-out"; // Durasi transisi
-        });
-  
-        requestId = requestAnimationFrame(handleScroll); // Meminta frame animasi berikutnya
-      };
-  
-      // Fungsi untuk mendeteksi section yang aktif
-      const handleSectionChange = () => {
-        const sections = ['about', 'skills', 'experience', 'education', 'projects', 'contact'];
-        const scrollPosition = window.scrollY + 100;
-        
-        for (const section of sections) {
-          const element = document.getElementById(section);
-          if (element) {
-            const offsetTop = element.offsetTop;
-            const offsetBottom = offsetTop + element.offsetHeight;
-            
-            if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-              setActiveSection(section);
-              break;
-            }
+    let currentScroll = 0; // Menyimpan posisi scroll saat ini
+    let requestId; // Untuk menyimpan ID dari requestAnimationFrame
+
+    const handleScroll = () => {
+      const newScroll = window.pageYOffset; // Mendapatkan posisi scroll baru
+      const scrollDelta = newScroll - currentScroll; // Menghitung perubahan scroll
+      currentScroll = newScroll; // Memperbarui posisi scroll saat ini
+
+      // Menggerakkan setiap blob berdasarkan posisi scroll
+      blobRefs.current.forEach((blob, index) => {
+        const initialPos = initialPositions[index];
+
+        // Menghitung pergerakan dalam arah X dan Y
+        const xOffset = Math.sin(newScroll / 100 + index * 0.5) * 340; // Pergerakan horizontal
+        const yOffset = Math.cos(newScroll / 100 + index * 0.5) * 40; // Pergerakan vertikal
+
+        const x = initialPos.x + xOffset; // Posisi X baru
+        const y = initialPos.y + yOffset; // Posisi Y baru
+
+        // Menerapkan transformasi dengan transisi halus
+        blob.style.transform = `translate(${x}px, ${y}px)`;
+        blob.style.transition = "transform 1.4s ease-out"; // Durasi transisi
+      });
+
+      requestId = requestAnimationFrame(handleScroll); // Meminta frame animasi berikutnya
+    };
+
+    // Fungsi untuk mendeteksi section yang aktif
+    const handleSectionChange = () => {
+      const sections = ['about', 'skills', 'experience', 'education', 'projects', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetBottom = offsetTop + element.offsetHeight;
+
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+            setActiveSection(section);
+            break;
           }
         }
-      };
-  
-      window.addEventListener("scroll", handleScroll); // Menambahkan event listener untuk scroll
-      window.addEventListener("scroll", handleSectionChange); // Mendeteksi section aktif
-      return () => {
-        window.removeEventListener("scroll", handleScroll); // Menghapus event listener saat komponen di-unmount
-        window.removeEventListener("scroll", handleSectionChange);
-        cancelAnimationFrame(requestId); // Membatalkan requestAnimationFrame
-      };
-    }, []);
-  
-    // Fungsi untuk scroll ke section
-    const scrollToSection = (sectionId) => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        setActiveSection(sectionId);
-        setIsMenuOpen(false); // Tutup menu mobile setelah klik
       }
     };
+
+    window.addEventListener("scroll", handleScroll); // Menambahkan event listener untuk scroll
+    window.addEventListener("scroll", handleSectionChange); // Mendeteksi section aktif
+    return () => {
+      window.removeEventListener("scroll", handleScroll); // Menghapus event listener saat komponen di-unmount
+      window.removeEventListener("scroll", handleSectionChange);
+      cancelAnimationFrame(requestId); // Membatalkan requestAnimationFrame
+    };
+  }, []);
+
+  // Fungsi untuk scroll ke section
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(sectionId);
+      setIsMenuOpen(false); // Tutup menu mobile setelah klik
+    }
+  };
+
+  const form = useRef()
+
+  const sendEmail = (e) => {
+    e.preventDefault()
+
+    emailjs.sendForm(
+      'service_l0l5v3q',
+      'template_6huci6b',
+      form.current,
+      'aYjju7dOXUuWFJ70z'
+    )
+      .then((result) => {
+        console.log(result.text)
+        alert("Message sent!")
+      })
+      .catch((error) => {
+        console.log(error)
+        alert("Failed: " + error.text)
+      })
+  }
 
   return (
     <div className={`${isDarkMode ? 'bg-black text-white' : 'bg-gray-100 text-gray-900'} font-sans overflow-x-hidden relative flex transition-colors duration-300 min-h-screen`}>
@@ -105,7 +127,7 @@ const App = () => {
           <div className="flex justify-start lg:pl-6 mb-12">
             <h1 className="text-xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">My Portfolio</h1>
           </div>
-          
+
           <div className="flex flex-col items-start space-y-8">
             {['About', 'Skills', 'Experience', 'Education', 'Projects', 'Contact'].map(section => {
               const sectionId = section.toLowerCase();
@@ -113,16 +135,14 @@ const App = () => {
                 <button
                   key={sectionId}
                   onClick={() => scrollToSection(sectionId)}
-                  className={`flex items-center justify-start w-full px-6 py-3 transition-all duration-300 group relative ${
-                    activeSection === sectionId 
-                      ? `${isDarkMode ? 'text-white' : 'text-gray-900'}` 
-                      : `${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-gray-500 hover:text-gray-900'}`
-                  }`}
+                  className={`flex items-center justify-start w-full px-6 py-3 transition-all duration-300 group relative ${activeSection === sectionId
+                    ? `${isDarkMode ? 'text-white' : 'text-gray-900'}`
+                    : `${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-gray-500 hover:text-gray-900'}`
+                    }`}
                 >
                   <span>{section}</span>
-                  <span className={`absolute left-0 h-8 w-1 rounded-r-lg bg-gradient-to-b from-green-400 to-blue-500 transition-all duration-300 ${
-                    activeSection === sectionId ? 'opacity-100' : 'opacity-0 group-hover:opacity-50'
-                  }`}></span>
+                  <span className={`absolute left-0 h-8 w-1 rounded-r-lg bg-gradient-to-b from-green-400 to-blue-500 transition-all duration-300 ${activeSection === sectionId ? 'opacity-100' : 'opacity-0 group-hover:opacity-50'
+                    }`}></span>
                 </button>
               );
             })}
@@ -130,7 +150,7 @@ const App = () => {
 
           {/* Toggle Dark/Light Mode */}
           <div className="flex justify-center mt-8">
-            <button 
+            <button
               onClick={() => setIsDarkMode(!isDarkMode)}
               className="p-2 rounded-full bg-gray-700 dark:bg-gray-300 transition-colors duration-300"
               aria-label="Toggle dark mode"
@@ -147,15 +167,15 @@ const App = () => {
             </button>
           </div>
         </div>
-        
+
         <div className="flex justify-start lg:pl-6">
-          <p className={`text-xs ${isDarkMode ? 'text-gray-500' : 'text-gray-400'}`}>© 2025 Pedro Widya</p>
+          <p className={`text-xs ${isDarkMode ? 'text-gray-500' : 'text-gray-400'}`}>© 2026 Pedro Widya</p>
         </div>
       </div>
 
       {/* Mobile Menu Button */}
       <div className="fixed top-4 left-4 z-50 lg:hidden">
-        <button 
+        <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className={`p-3 rounded-lg ${isDarkMode ? 'bg-black bg-opacity-70' : 'bg-white bg-opacity-90'} backdrop-blur-lg border ${isDarkMode ? 'border-white border-opacity-20' : 'border-gray-200'}`}
         >
@@ -173,20 +193,19 @@ const App = () => {
                 <button
                   key={sectionId}
                   onClick={() => scrollToSection(sectionId)}
-                  className={`text-2xl font-bold py-4 transition-all duration-300 ${
-                    activeSection === sectionId 
-                      ? 'bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent' 
-                      : `${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-gray-500 hover:text-gray-900'}`
-                  }`}
+                  className={`text-2xl font-bold py-4 transition-all duration-300 ${activeSection === sectionId
+                    ? 'bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent'
+                    : `${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-gray-500 hover:text-gray-900'}`
+                    }`}
                 >
                   {section}
                 </button>
               );
             })}
-            
+
             {/* Dark mode toggle in mobile menu */}
             <div className="mt-8 flex justify-center">
-              <button 
+              <button
                 onClick={() => setIsDarkMode(!isDarkMode)}
                 className="p-3 rounded-full bg-gray-700 dark:bg-gray-300 transition-colors duration-300"
                 aria-label="Toggle dark mode"
@@ -240,14 +259,14 @@ const App = () => {
             </h1>
             <p className={`text-lg sm:text-xl ${isDarkMode ? 'text-gray-400' : 'text-gray-600'} mb-6`}>Full-Stack Developer | UI/UX Designer | IT Support</p>
             <div className="mt-8 flex justify-center">
-              <button 
-                onClick={() => scrollToSection('about')} 
+              <button
+                onClick={() => scrollToSection('about')}
                 className="bg-gradient-to-r from-green-400 to-blue-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg z-50 transition-all duration-300 hover:shadow-cyan-500/30 hover:scale-105 text-sm sm:text-base"
               >
                 View My Profile
               </button>
             </div>
-            
+
             {/* Scroll indicator */}
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
               <div className={`w-6 h-10 border-2 ${isDarkMode ? 'border-gray-400' : 'border-gray-500'} rounded-full flex justify-center`}>
@@ -263,16 +282,24 @@ const App = () => {
             <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-8">About Me</h2>
             <div className="flex flex-col lg:flex-row gap-8 items-center">
               <div className="animate-float order-2 lg:order-1 lg:w-1/2">
-                <img src="/images/myself.jpg" alt="Profile" className="w-48 h-48 lg:w-64 lg:h-64 rounded-full mx-auto shadow-lg" />
+                <img src="/images/myself_casual.jpg" alt="Profile" className="w-48 h-48 lg:w-64 lg:h-64 rounded-full mx-auto shadow-lg" />
               </div>
               <div className={`text-lg ${isDarkMode ? 'text-gray-400' : 'text-gray-600'} order-1 lg:order-2 lg:w-1/2 text-center lg:text-left`}>
-                <p className="mb-4">Saya adalah seorang lulusan baru di bidang IT yang memiliki minat besar di pengembangan web. Selama kuliah, saya telah mempelajari berbagai teknologi web dan saya siap untuk mengembangkan kemampuan saya lebih lanjut.</p>
-                <p className="mb-6">Saya bersemangat untuk memulai karir saya di bidang pengembangan web dan saya siap untuk bekerja sama dengan tim untuk menciptakan solusi-solusi inovatif.</p>
-                
+                <p className="mb-4">
+                  Halo, saya seorang IT Support dengan latar belakang pendidikan di bidang IT dan minat yang besar dalam pengembangan web. Selama masa kuliah, saya mempelajari berbagai teknologi web dan mengerjakan beberapa proyek website sebagai bagian dari tugas akademik.
+                </p>
+
+                <p className="mb-4">
+                  Salah satu proyek yang saya kerjakan adalah <strong>Text Emotion Analyzer</strong> di GitHub, yang menunjukkan kemampuan saya dalam menganalisis data serta mengembangkan solusi berbasis teknologi.
+                </p>
+
+                <p className="mb-6">
+                  Saat ini saya bekerja sebagai IT Support, sambil terus mengembangkan kemampuan di bidang web development. Saya percaya pengalaman teknis dan pemahaman terhadap kebutuhan pengguna dapat membantu saya menciptakan solusi digital yang lebih efektif dan bermanfaat.
+                </p>
                 {/* Download CV Button */}
                 <div className="mt-8 flex justify-center lg:justify-start">
-                  <a 
-                    href="#" 
+                  <a
+                    href="/Pedro_CV.pdf"
                     className="inline-flex items-center gap-2 bg-gradient-to-r from-green-400 to-blue-500 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 hover:shadow-cyan-500/30 hover:scale-105 text-sm sm:text-base"
                   >
                     <span>Download CV</span>
@@ -292,32 +319,29 @@ const App = () => {
             <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-8 text-center">
               My Skills
             </h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { title: 'Python (Django)', icon: '🐍', color: 'from-yellow-500 to-green-500' },
                 { title: 'JavaScript (React)', icon: '⚛️', color: 'from-yellow-400 to-blue-500' },
-                { title: 'Database (PostgreSQL, MySQL)', icon: '🗄️', color: 'from-blue-400 to-purple-500' },
-                { title: 'CSS (Tailwind, Bootstrap)', icon: '🎨', color: 'from-pink-400 to-purple-500' },
-                { title: 'UI/UX (Figma)', icon: '✨', color: 'from-red-400 to-purple-500' },
-                { title: 'DevOps', icon: '🔄', color: 'from-gray-400 to-blue-500' }
+                { title: 'Database (PostgreSQL)', icon: '🗄️', color: 'from-blue-400 to-purple-500' },
+                { title: 'CSS (Tailwind)', icon: '🎨', color: 'from-pink-400 to-purple-500' },
+                { title: 'UI/UX (Stitch Google AI)', icon: '✨', color: 'from-red-400 to-purple-500' },
               ].map((skill) => (
                 <div
                   key={skill.title}
-                  className={`relative group overflow-hidden rounded-2xl p-6 ${
-                    isDarkMode
-                      ? 'bg-gradient-to-br from-gray-800 to-gray-900'
-                      : 'bg-gradient-to-br from-white to-gray-100'
-                  } shadow-lg transform transition-all duration-500 hover:-translate-y-1`}
+                  className={`relative group overflow-hidden rounded-2xl p-6 ${isDarkMode
+                    ? 'bg-gradient-to-br from-gray-800 to-gray-900'
+                    : 'bg-gradient-to-br from-white to-gray-100'
+                    } shadow-lg transform transition-all duration-500 hover:-translate-y-1`}
                 >
                   <div className="text-center mb-4">
                     <span className="text-4xl">{skill.icon}</span>
                   </div>
 
                   <h3
-                    className={`text-xl font-bold text-center ${
-                      isDarkMode ? 'text-white' : 'text-gray-800'
-                    }`}
+                    className={`text-xl font-bold text-center ${isDarkMode ? 'text-white' : 'text-gray-800'
+                      }`}
                   >
                     {skill.title}
                   </h3>
@@ -327,32 +351,28 @@ const App = () => {
 
             {/* Additional Skills */}
             <div
-              className={`mt-12 p-6 rounded-2xl ${
-                isDarkMode
-                  ? 'bg-gradient-to-r from-gray-800 to-gray-900'
-                  : 'bg-gradient-to-r from-white to-gray-100'
-              } shadow-lg`}
+              className={`mt-12 p-6 rounded-2xl ${isDarkMode
+                ? 'bg-gradient-to-r from-gray-800 to-gray-900'
+                : 'bg-gradient-to-r from-white to-gray-100'
+                } shadow-lg`}
             >
               <h3
-                className={`text-xl font-bold mb-6 text-center ${
-                  isDarkMode ? 'text-white' : 'text-gray-800'
-                }`}
+                className={`text-xl font-bold mb-6 text-center ${isDarkMode ? 'text-white' : 'text-gray-800'
+                  }`}
               >
                 Additional Technologies
               </h3>
 
               <div className="flex flex-wrap justify-center gap-3">
                 {[
-                  'Git', 'Docker', 'REST APIs', 'GraphQL', 'AWS', 
-                  'Firebase', 'Node.js', 'Express', 'MongoDB'
+                  'Git', 'REST APIs', 'Node.js', 'Express.js'
                 ].map((tech) => (
                   <span
                     key={tech}
-                    className={`px-3 py-2 rounded-full text-xs sm:text-sm font-medium ${
-                      isDarkMode
-                        ? 'bg-gray-700 text-gray-200 hover:bg-gray-600'
-                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                    } transition-colors duration-300 cursor-default`}
+                    className={`px-3 py-2 rounded-full text-xs sm:text-sm font-medium ${isDarkMode
+                      ? 'bg-gray-700 text-gray-200 hover:bg-gray-600'
+                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                      } transition-colors duration-300 cursor-default`}
                   >
                     {tech}
                   </span>
@@ -373,19 +393,19 @@ const App = () => {
                   "company": "Toko Purnama",
                   "date": "2019 - 2020",
                   "tasks": [
-                    "Mengelola operasional toko",
-                    "Memberikan layanan pelanggan yang luar biasa",
-                    "Memelihara manajemen gudang stok yang efisien"
+                    "Mengelola operasional toko agar kegiatan penjualan berjalan lancar.",
+                    "Memberikan pelayanan kepada pelanggan selama proses pembelian.",
+                    "Mengelola dan memantau stok barang di gudang."
                   ]
                 },
                 {
-                  "title": "Marketing Online",
+                  "title": "Administrasi",
                   "company": "PT. Usaha Inti Bersama",
                   "date": "2020 - 2022",
                   "tasks": [
-                    "Mengelola toko online",
-                    "Membuat konten digital yang menarik",
-                    "Menganalisis tren pasar untuk mengoptimalkan penjualan"
+                    "Mengelola operasional toko online dan proses penjualan.",
+                    "Membuat konten digital untuk promosi produk.",
+                    "Menganalisis tren pasar untuk meningkatkan penjualan."
                   ]
                 },
                 {
@@ -393,9 +413,9 @@ const App = () => {
                   "company": "PT. GFC Terpadu",
                   "date": "2022 - present",
                   "tasks": [
-                    "Maintenance CCTV",
-                    "Troubleshooting CCTV",
-                    "Mengatur dan mengkonfirgurasi sistem CCTV untuk memenuhi kebutuhan toko"
+                    "Maintenance dan troubleshooting sistem CCTV.",
+                    "Konfigurasi sistem CCTV sesuai kebutuhan operasional.",
+                    "Dukungan teknis untuk memastikan sistem berjalan optimal."
                   ]
                 }
               ].map(exp => (
@@ -418,17 +438,17 @@ const App = () => {
             <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-8 text-center">Education</h2>
             <div className="flex flex-col gap-6">
               {[
-                { 
-                  title: 'Sarjana Teknik Komputer', 
-                  institution: 'Universitas Buddhi Dharma', 
-                  date: '2020 - 2024', 
-                  details: ['IPK: 3.51', 'Fokus pada pengembangan web menggunakan framework React', 'Pengembangan NLP, Data Mining dan Text Mining.'] 
+                {
+                  title: 'Sarjana Teknik Komputer',
+                  institution: 'Universitas Buddhi Dharma',
+                  date: '2020 - 2024',
+                  details: ['IPK: 3.51.', 'Fokus pada pengembangan web menggunakan framework React.', 'Pengembangan NLP, Data Mining dan Text Mining.']
                 },
-                { 
-                  title: 'Proyek Skripsi', 
-                  institution: 'Implementasi sentimen emosi pada lirik lagu menggunakan Bot Discord dengan metode analisis sentimen berbasis leksikon', 
-                  date: '2023 - 2024', 
-                  details: ['Mengembangkan Bot Discord untuk memutar lagu', 'Mengembangkan Bot Discord untuk menganalisis sentimen emosi lagu', 'Mengembangkan sistem kontrol Next, Previous, Pause, Shut Down, dan Show Lyric pada Bot Discord.'] 
+                {
+                  title: 'Proyek Skripsi',
+                  institution: 'Implementasi sentimen emosi pada lirik lagu menggunakan Bot Discord dengan metode analisis sentimen berbasis leksikon',
+                  date: '2023 - 2024',
+                  details: ['Mengembangkan Bot Discord untuk memutar lagu.', 'Mengembangkan Bot Discord untuk menganalisis sentimen emosi lagu.', 'Mengembangkan sistem kontrol Next, Previous, Pause, Shut Down, dan Show Lyric pada Bot Discord.']
                 }
               ].map(edu => (
                 <div key={edu.title} className={`${isDarkMode ? 'bg-white bg-opacity-10' : 'bg-gray-800 bg-opacity-10'} backdrop-blur-lg rounded-lg border ${isDarkMode ? 'border-white border-opacity-20' : 'border-gray-300'} p-6 transition-transform duration-300 hover:scale-[1.01]`}>
@@ -450,15 +470,17 @@ const App = () => {
             <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-8 text-center">Projects</h2>
             <div className="grid grid-cols-1 gap-6">
               {[
-                { 
-                  title: 'Bot Discord', 
-                  description: 'Bot untuk memutar Musik di Platform Discord.', 
-                  image: '/images/music-discord.png' 
+                {
+                  title: 'Bot Discord',
+                  description: 'Bot untuk memutar Musik di Platform Discord.',
+                  image: '/images/music-discord.png',
+                  link: 'https://discord.com/oauth2/authorize?client_id=1223985141144092794'
                 },
-                { 
-                  title: 'Implementation Of Text Mining For Emotion Detection', 
-                  description: 'Mendeteksi sentimen emosi dari teks menggunakan teknik text mining untuk menganalisis dan mengidentifikasi emosi yang terkandung dalam kalimat.', 
-                  image: '/images/Sentiment.jpeg' 
+                {
+                  title: 'Implementation Of Text Mining For Emotion Detection',
+                  description: 'Mendeteksi sentimen emosi dari teks menggunakan teknik text mining untuk menganalisis dan mengidentifikasi emosi yang terkandung dalam kalimat.',
+                  image: '/images/Sentiment.jpeg',
+                  link: 'https://text-emotion-analyzer-pedro.vercel.app/'
                 },
               ].map(project => (
                 <div key={project.title} className={`${isDarkMode ? 'bg-white bg-opacity-10' : 'bg-gray-800 bg-opacity-10'} backdrop-blur-lg rounded-lg border ${isDarkMode ? 'border-white border-opacity-20' : 'border-gray-300'} p-6 transition-transform duration-300 hover:scale-[1.01] group`}>
@@ -467,7 +489,7 @@ const App = () => {
                   </div>
                   <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{project.title}</h3>
                   <p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} mb-4`}>{project.description}</p>
-                  <a href="#" className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-all duration-300 group-hover:translate-x-2 text-sm sm:text-base">
+                  <a href={project.link} className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-all duration-300 group-hover:translate-x-2 text-sm sm:text-base">
                     <span>View Project</span>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -505,29 +527,32 @@ const App = () => {
                 </a>
               ))}
             </div>
-            
+
             {/* Contact Form */}
             <div className={`mt-8 ${isDarkMode ? 'bg-white bg-opacity-10' : 'bg-gray-800 bg-opacity-10'} backdrop-blur-lg rounded-lg border ${isDarkMode ? 'border-white border-opacity-20' : 'border-gray-300'} p-6 max-w-2xl mx-auto`}>
               <h3 className={`text-xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Send me a message</h3>
-              <form className="space-y-4">
+              <form ref={form} onSubmit={sendEmail} className="space-y-4">
                 <div className="grid grid-cols-1 gap-4">
-                  <input 
-                    type="text" 
-                    placeholder="Your Name" 
+                  <input
+                    type="text"
+                    name="user_name"
+                    placeholder="Your Name"
                     className={`${isDarkMode ? 'bg-black bg-opacity-30 border-white border-opacity-20' : 'bg-white border-gray-300'} border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all duration-300 text-sm sm:text-base`}
                   />
-                  <input 
-                    type="email" 
-                    placeholder="Your Email" 
+                  <input
+                    type="email"
+                    name="user_email"
+                    placeholder="Your Email"
                     className={`${isDarkMode ? 'bg-black bg-opacity-30 border-white border-opacity-20' : 'bg-white border-gray-300'} border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all duration-300 text-sm sm:text-base`}
                   />
                 </div>
-                <textarea 
-                  placeholder="Your Message" 
+                <textarea
+                  name="message"
+                  placeholder="Your Message"
                   rows="4"
                   className={`w-full ${isDarkMode ? 'bg-black bg-opacity-30 border-white border-opacity-20' : 'bg-white border-gray-300'} border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all duration-300 text-sm sm:text-base`}
                 ></textarea>
-                <button 
+                <button
                   type="submit"
                   className="bg-gradient-to-r from-green-400 to-blue-500 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:shadow-cyan-500/30 hover:scale-105 w-full sm:w-auto text-sm sm:text-base"
                 >
@@ -539,7 +564,7 @@ const App = () => {
         </section>
 
         <footer className={`py-8 text-center ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} px-4`}>
-          <p className="text-sm">© 2025 Pedro Widya. All rights reserved.</p>
+          <p className="text-sm">© 2026 Pedro Widya. All rights reserved.</p>
         </footer>
       </div>
     </div>
