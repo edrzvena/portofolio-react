@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import './index.css';
 import emailjs from '@emailjs/browser'
 
@@ -12,12 +12,12 @@ const App = () => {
   // State untuk dark mode
   const [isDarkMode, setIsDarkMode] = useState(true);
   // Posisi awal untuk setiap blob
-  const initialPositions = [
+  const initialPositions = useMemo(() => [
     { x: -4, y: 0 },
     { x: -4, y: 0 },
     { x: 20, y: -8 },
     { x: 20, y: -8 },
-  ];
+  ], []);
 
   // Simpan preference ke localStorage
   useEffect(() => {
@@ -30,19 +30,20 @@ const App = () => {
     if (savedMode !== null) {
       setIsDarkMode(savedMode);
     }
-  }, [initialPositions]);
+  }, []);
 
   useEffect(() => {
-    let currentScroll = 0; // Menyimpan posisi scroll saat ini
+    //let currentScroll = 0; // Menyimpan posisi scroll saat ini
     let requestId; // Untuk menyimpan ID dari requestAnimationFrame
 
     const handleScroll = () => {
       const newScroll = window.pageYOffset; // Mendapatkan posisi scroll baru
       //const scrollDelta = newScroll - currentScroll; // Menghitung perubahan scroll
-      currentScroll = newScroll; // Memperbarui posisi scroll saat ini
+      //currentScroll = newScroll; // Memperbarui posisi scroll saat ini
 
       // Menggerakkan setiap blob berdasarkan posisi scroll
       blobRefs.current.forEach((blob, index) => {
+        if (!blob) return;
         const initialPos = initialPositions[index];
 
         // Menghitung pergerakan dalam arah X dan Y
@@ -86,7 +87,7 @@ const App = () => {
       window.removeEventListener("scroll", handleSectionChange);
       cancelAnimationFrame(requestId); // Membatalkan requestAnimationFrame
     };
-  }, []);
+  }, [initialPositions]);
 
   // Fungsi untuk scroll ke section
   const scrollToSection = (sectionId) => {
