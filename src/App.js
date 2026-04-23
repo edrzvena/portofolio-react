@@ -30,7 +30,7 @@ const App = () => {
     if (savedMode !== null) {
       setIsDarkMode(savedMode);
     }
-  }, []);
+  }, [initialPositions]);
 
   useEffect(() => {
     let currentScroll = 0; // Menyimpan posisi scroll saat ini
@@ -38,7 +38,7 @@ const App = () => {
 
     const handleScroll = () => {
       const newScroll = window.pageYOffset; // Mendapatkan posisi scroll baru
-      const scrollDelta = newScroll - currentScroll; // Menghitung perubahan scroll
+      //const scrollDelta = newScroll - currentScroll; // Menghitung perubahan scroll
       currentScroll = newScroll; // Memperbarui posisi scroll saat ini
 
       // Menggerakkan setiap blob berdasarkan posisi scroll
