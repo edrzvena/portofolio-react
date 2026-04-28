@@ -16,6 +16,7 @@ const Skills = () => {
             { title: 'JavaScript (React)', icon: '⚛️', color: 'from-yellow-400 to-blue-500' },
             { title: 'Database (PostgreSQL)', icon: '🗄️', color: 'from-blue-400 to-purple-500' },
             { title: 'CSS (Tailwind)', icon: '🎨', color: 'from-pink-400 to-purple-500' },
+            { title: 'Deployment (Vercel)', icon: '🚀', color: 'from-gray-700 to-gray-900' },
             { title: 'UI/UX (Stitch Google AI)', icon: '✨', color: 'from-red-400 to-purple-500' },
           ].map((skill) => (
             <div
@@ -53,16 +54,27 @@ const Skills = () => {
             Additional Technologies
           </h3>
 
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-4">
             {[
-              'Git', 'REST APIs', 'Node.js', 'Express.js'
+              'Git',
+              'GitHub',
+              'REST API',
+              'Postman',
+              'Bruno',
+              'Node.js',
+              'Express',
+              'AI-Assisted Development (ChatGPT, Claude, Gemini, DeepSeek, Blackbox AI, Google Stitch)'
             ].map((tech) => (
               <span
                 key={tech}
-                className={`px-3 py-2 rounded-full text-xs sm:text-sm font-medium ${isDarkMode
-                  ? 'bg-gray-700 text-gray-200 hover:bg-gray-600'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                  } transition-colors duration-300 cursor-default`}
+                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium flex items-center gap-2
+                transition-all duration-300 hover:scale-105 hover:-translate-y-[2px]
+                ${tech.includes("AI-Assisted")
+                    ? "bg-gradient-to-r from-green-400 to-blue-500 text-white"
+                    : isDarkMode
+                      ? "bg-gray-700 text-gray-200 hover:bg-gray-600"
+                      : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                  }`}
               >
                 {tech}
               </span>
