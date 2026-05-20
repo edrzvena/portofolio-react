@@ -40,34 +40,29 @@ const About = () => {
               }`}
           >
             <p className="mb-4">
-              Halo, saya seorang <span className="font-semibold text-green-400">IT Support</span> dengan
-              latar belakang pendidikan di bidang IT dan memiliki ketertarikan pada
-              <span className="font-semibold text-green-400"> web development</span>.
+              Saya seorang <span className="font-semibold text-green-400">IT Support</span> dengan
+              latar belakang pendidikan di <span className="font-semibold text-green-400">bidang IT</span> dan
+              memiliki ketertarikan pada pengembangan <span className="font-semibold text-green-400">web</span> menggunakan{' '}
+              <span className="font-semibold text-green-400">React</span> dan{' '}
+              <span className="font-semibold text-green-400">PostgreSQL</span>.
             </p>
 
             <p className="mb-4">
-              Salah satu proyek yang pernah saya kerjakan adalah{' '}
-              <span className="font-semibold text-green-400">
-                Text Emotion Analyzer
-              </span>{' '}
-              yang saya publikasikan di
-              <span className="font-semibold text-green-400"> GitHub</span>, sebagai bagian dari proses belajar
-              menggabungkan pemrosesan data dengan pengembangan aplikasi web.
-            </p>
-
-            <p className="mb-4">
-              Saat ini saya sedang memperdalam kemampuan di bidang
-              <span className="font-semibold text-green-400"> web development</span> dan memanfaatkan berbagai tools berbasis
-              <span className="font-semibold text-green-400"> AI</span> untuk membantu
-              proses riset, debugging, dan eksplorasi solusi, sambil tetap
-              berfokus pada pemahaman
-              <span className="font-semibold text-green-400"> fundamental</span> pemrograman.
+              Saat ini saya sedang memperdalam kemampuan{' '}
+              <span className="font-semibold text-green-400">web development</span> dengan membangun berbagai
+              proyek pribadi di <span className="font-semibold text-green-400">GitHub</span>, seperti{' '}
+              <span className="font-semibold text-green-400">Text Emotion Analyzer</span> dan sistem{' '}
+              <span className="font-semibold text-green-400">POS Cashier</span> berbasis web. Saya juga
+              memanfaatkan tools berbasis <span className="font-semibold text-green-400">AI</span> untuk
+              membantu riset, debugging, dan eksplorasi solusi, sambil tetap berfokus pada pemahaman{' '}
+              <span className="font-semibold text-green-400">fundamental</span> pemrograman.
             </p>
 
             <p className="mb-6">
-              Saya selalu terbuka untuk belajar hal baru dan tertarik untuk terlibat
-              dalam proyek yang dapat meningkatkan kemampuan teknis sekaligus
-              memberikan dampak nyata.
+              Saya selalu terbuka untuk mempelajari <span className="font-semibold text-green-400">teknologi</span> baru
+              dan <span className="font-semibold text-green-400">tertarik</span> terlibat dalam proyek yang
+              dapat meningkatkan kemampuan teknis sekaligus memberikan dampak{' '}
+              <span className="font-semibold text-green-400">nyata</span>.
             </p>
 
             {/* Download CV Button */}

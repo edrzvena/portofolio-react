@@ -13,7 +13,7 @@ const Education = () => {
               title: 'Sarjana Teknik Komputer',
               institution: 'Universitas Buddhi Dharma',
               date: '2020 - 2024',
-              details: ['IPK: 3.51.', 'Fokus pada pengembangan web menggunakan framework React.', 'Pengembangan NLP, Data Mining dan Text Mining.']
+              details: ['IPK: 3.51.', 'Fokus pada pengembangan web modern menggunakan React dan PostgreSQL.', 'Pengembangan NLP, Data Mining dan Text Mining.']
             },
             {
               title: 'Proyek Skripsi',

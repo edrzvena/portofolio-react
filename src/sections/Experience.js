@@ -12,7 +12,7 @@ const Experience = () => {
             {
               "title": "Administrasi",
               "company": "Toko Purnama",
-              "date": "2019 - 2020",
+              "date": "Jul 2019 - Nov 2020",
               "tasks": [
                 "Mengelola operasional toko agar kegiatan penjualan berjalan lancar.",
                 "Memberikan pelayanan kepada pelanggan selama proses pembelian.",
@@ -22,7 +22,7 @@ const Experience = () => {
             {
               "title": "Administrasi",
               "company": "PT. Usaha Inti Bersama",
-              "date": "2020 - 2022",
+              "date": "Nov 2020 - Mar 2022",
               "tasks": [
                 "Mengelola operasional toko online dan proses penjualan.",
                 "Membuat konten digital untuk promosi produk.",
@@ -32,7 +32,7 @@ const Experience = () => {
             {
               "title": "IT Support",
               "company": "PT. GFC Terpadu",
-              "date": "2022 - present",
+              "date": "Nov 2022 - present",
               "tasks": [
                 "Maintenance dan troubleshooting sistem CCTV.",
                 "Konfigurasi sistem CCTV sesuai kebutuhan operasional.",
