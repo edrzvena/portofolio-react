@@ -1,46 +1,67 @@
-usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
-           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
-           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]
-           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]
-           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]
-           <command> [<args>]
+<div align="center">
 
-These are common Git commands used in various situations:
+# Personal Portfolio Website
 
-start a working area (see also: git help tutorial)
-   clone      Clone a repository into a new directory
-   init       Create an empty Git repository or reinitialize an existing one
+A modern, responsive portfolio web application built with React and Tailwind CSS.
+Features dark/light mode, smooth scroll animations, and an integrated contact form.
 
-work on the current change (see also: git help everyday)
-   add        Add file contents to the index
-   mv         Move or rename a file, a directory, or a symlink
-   restore    Restore working tree files
-   rm         Remove files from the working tree and from the index
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-0055FF?logo=framer&logoColor=white)](https://www.framer.com/motion/)
+[![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?logo=vercel&logoColor=white)](https://vercel.com/)
 
-examine the history and state (see also: git help revisions)
-   bisect     Use binary search to find the commit that introduced a bug
-   diff       Show changes between commits, commit and working tree, etc
-   grep       Print lines matching a pattern
-   log        Show commit logs
-   show       Show various types of objects
-   status     Show the working tree status
+</div>
 
-grow, mark and tweak your common history
-   backfill   Download missing objects in a partial clone
-   branch     List, create, or delete branches
-   commit     Record changes to the repository
-   merge      Join two or more development histories together
-   rebase     Reapply commits on top of another base tip
-   reset      Reset current HEAD to the specified state
-   switch     Switch branches
-   tag        Create, list, delete or verify a tag object signed with GPG
+---
 
-collaborate (see also: git help workflows)
-   fetch      Download objects and refs from another repository
-   pull       Fetch from and integrate with another repository or a local branch
-   push       Update remote refs along with associated objects
+## Tech Stack
 
-'git help -a' and 'git help -g' list available subcommands and some
-concept guides. See 'git help <command>' or 'git help <concept>'
-to read about a specific subcommand or concept.
-See 'git help git' for an overview of the system.
+| Layer | Technology |
+| --- | --- |
+| **Framework** | React 19 |
+| **Styling** | Tailwind CSS, PostCSS, Autoprefixer |
+| **Animation** | Framer Motion |
+| **Icons** | React Icons |
+| **Email Service** | EmailJS |
+| **Deployment** | Vercel |
+
+---
+
+## Skills
+
+### Core
+
+- **Python** — Django
+- **JavaScript** — React, Node.js, Express
+- **Database** — PostgreSQL, Supabase
+- **Styling** — Tailwind CSS
+- **UI/UX** — Google Stitch AI
+- **Deployment** — Vercel
+
+### Tools & Workflow
+
+`Git` &nbsp;·&nbsp; `GitHub` &nbsp;·&nbsp; `REST API` &nbsp;·&nbsp; `Postman` &nbsp;·&nbsp; `Bruno` &nbsp;·&nbsp; `EmailJS`
+
+### AI-Assisted Development
+
+`ChatGPT` &nbsp;·&nbsp; `Claude` &nbsp;·&nbsp; `Gemini` &nbsp;·&nbsp; `DeepSeek` &nbsp;·&nbsp; `Blackbox AI` &nbsp;·&nbsp; `Google Stitch`
+
+---
+
+
+
+
+
+
+
+
+
+## Contact
+
+<div align="center">
+
+[![Email](https://img.shields.io/badge/Email-widyadharta@gmail.com-EA4335?logo=gmail&logoColor=white&style=for-the-badge)](mailto:widyadharta@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin&logoColor=white&style=for-the-badge)](https://www.linkedin.com/in/pedro-widyadharta-ciady-773209350)
+[![GitHub](https://img.shields.io/badge/GitHub-@edrzvena-181717?logo=github&logoColor=white&style=for-the-badge)](https://github.com/edrzvena)
+
+</div>
