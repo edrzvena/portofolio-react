@@ -37,7 +37,7 @@ const Contact = () => {
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {[
             { name: '📧 Email', link: 'mailto:widyadharta@gmail.com', color: 'hover:shadow-cyan-500/30' },
-            { name: '🔗 LinkedIn', link: 'https://www.linkedin.com/in/pedro-widyadharta-773209350/', color: 'hover:shadow-blue-500/30' },
+            { name: '🔗 LinkedIn', link: 'linkedin.com/in/pedro-widyadharta-ciady-773209350', color: 'hover:shadow-blue-500/30' },
             { name: '🐱 GitHub', link: 'https://github.com/edrzvena', color: 'hover:shadow-purple-500/30' },
           ].map((item, index) => (
             <a
