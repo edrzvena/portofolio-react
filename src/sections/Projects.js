@@ -2,6 +2,7 @@ import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 import music_discord from "../assets/images/music-discord.png";
 import sentiment from "../assets/images/sentiment.jpeg";
+import pos from "../assets/images/pos.png";
 
 const Projects = () => {
   const { isDarkMode } = useTheme();
@@ -22,6 +23,12 @@ const Projects = () => {
               description: 'Mendeteksi sentimen emosi dari teks menggunakan teknik text mining untuk menganalisis dan mengidentifikasi emosi yang terkandung dalam kalimat.',
               image: sentiment,
               link: 'https://text-emotion-analyzer-pedro.vercel.app/'
+            },
+            {
+              title: 'POS Cashier — Point of Sale Web App',
+              description: 'Membangun aplikasi kasir (Point of Sale) berbasis web untuk mendukung operasional transaksi penjualan harian pada bisnis cafe/retail menggunakan teknologi React dan Supabase.',
+              image: pos,
+              link: 'https://kasir-nya.vercel.app/'
             },
           ].map(project => (
             <div key={project.title} className={`${isDarkMode ? 'bg-white bg-opacity-10' : 'bg-gray-800 bg-opacity-10'} backdrop-blur-lg rounded-lg border ${isDarkMode ? 'border-white border-opacity-20' : 'border-gray-300'} p-6 transition-transform duration-300 hover:scale-[1.01] group`}>
