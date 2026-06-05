@@ -31,20 +31,20 @@ Features dark/light mode, smooth scroll animations, and an integrated contact fo
 
 ### Core
 
-- **Python** — Django
-- **JavaScript** — React, Node.js, Express
-- **Database** — PostgreSQL, Supabase
+- **Frontend** — React
+- **Backend** — Node.js, Express
+- **Database** — PostgreSQL
 - **Styling** — Tailwind CSS
 - **UI/UX** — Google Stitch AI
 - **Deployment** — Vercel
 
-### Tools & Workflow
+### Tools & Others
 
-`Git` &nbsp;·&nbsp; `GitHub` &nbsp;·&nbsp; `REST API` &nbsp;·&nbsp; `Postman` &nbsp;·&nbsp; `Bruno` &nbsp;·&nbsp; `EmailJS`
+`Git` &nbsp;·&nbsp; `GitHub` &nbsp;·&nbsp; `REST API` &nbsp;·&nbsp; `Postman` &nbsp;·&nbsp; `Bruno`
 
 ### AI-Assisted Development
 
-`ChatGPT` &nbsp;·&nbsp; `Claude` &nbsp;·&nbsp; `Gemini` &nbsp;·&nbsp; `DeepSeek` &nbsp;·&nbsp; `Blackbox AI` &nbsp;·&nbsp; `Google Stitch`
+`ChatGPT` &nbsp;·&nbsp; `Claude` &nbsp;·&nbsp; `Gemini` &nbsp;·&nbsp; `DeepSeek` &nbsp;·&nbsp; `Google Stitch`
 
 ---
 
