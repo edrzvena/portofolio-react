@@ -54,7 +54,7 @@ const Navbar = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen }) =
         </div>
 
         <div className="flex justify-start lg:pl-6">
-          <p className={`text-xs ${isDarkMode ? 'text-gray-500' : 'text-gray-400'}`}>© 2026 Pedro Widya</p>
+          <p className={`text-xs ${isDarkMode ? 'text-gray-500' : 'text-gray-400'}`}>© Pedro Widya</p>
         </div>
       </div>
 

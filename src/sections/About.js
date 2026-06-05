@@ -40,17 +40,12 @@ const About = () => {
               }`}
           >
             <p className="mb-4">
-              Saya seorang <span className="font-semibold text-green-400">IT Support</span> dengan
-              latar belakang pendidikan di <span className="font-semibold text-green-400">bidang IT</span> dan
-              memiliki ketertarikan pada pengembangan <span className="font-semibold text-green-400">web</span> menggunakan{' '}
-              <span className="font-semibold text-green-400">React</span> dan{' '}
-              <span className="font-semibold text-green-400">PostgreSQL</span>.
-            </p>
-
-            <p className="mb-4">
               Saat ini saya sedang memperdalam kemampuan{' '}
               <span className="font-semibold text-green-400">web development</span> dengan membangun berbagai
-              proyek pribadi di <span className="font-semibold text-green-400">GitHub</span>, seperti{' '}
+              proyek pribadi di <span className="font-semibold text-green-400">GitHub</span> menggunakan{' '}
+              <span className="font-semibold text-green-400">React</span>,{' '}
+              <span className="font-semibold text-green-400">Node.js</span>, dan{' '}
+              <span className="font-semibold text-green-400">PostgreSQL</span>, seperti{' '}
               <span className="font-semibold text-green-400">Text Emotion Analyzer</span> dan sistem{' '}
               <span className="font-semibold text-green-400">POS Cashier</span> berbasis web. Saya juga
               memanfaatkan tools berbasis <span className="font-semibold text-green-400">AI</span> untuk

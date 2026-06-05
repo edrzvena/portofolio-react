@@ -12,8 +12,8 @@ const Skills = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
-            { title: 'Python (Django)', icon: '🐍', color: 'from-yellow-500 to-green-500' },
-            { title: 'JavaScript (React)', icon: '⚛️', color: 'from-yellow-400 to-blue-500' },
+            { title: 'Frontend (React)', icon: '⚛️', color: 'from-yellow-400 to-blue-500' },
+            { title: 'Backend (Node.js & Express)', icon: '🛠️', color: 'from-green-400 to-emerald-600' },
             { title: 'Database (PostgreSQL)', icon: '🗄️', color: 'from-blue-400 to-purple-500' },
             { title: 'CSS (Tailwind)', icon: '🎨', color: 'from-pink-400 to-purple-500' },
             { title: 'Deployment (Vercel)', icon: '🚀', color: 'from-gray-700 to-gray-900' },
@@ -40,7 +40,7 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Additional Skills */}
+        {/* Tools & Others */}
         <div
           className={`mt-12 p-6 rounded-2xl ${isDarkMode
             ? 'bg-gradient-to-r from-gray-800 to-gray-900'
@@ -51,7 +51,7 @@ const Skills = () => {
             className={`text-xl font-bold mb-6 text-center ${isDarkMode ? 'text-white' : 'text-gray-800'
               }`}
           >
-            Additional Technologies
+            Tools & Others
           </h3>
 
           <div className="flex flex-wrap justify-center gap-4">
@@ -61,9 +61,7 @@ const Skills = () => {
               'REST API',
               'Postman',
               'Bruno',
-              'Node.js',
-              'Express',
-              'AI-Assisted Development (ChatGPT, Claude, Gemini, DeepSeek, Blackbox AI, Google Stitch)'
+              'AI-Assisted Development (ChatGPT, Claude, Gemini, DeepSeek, Google Stitch)'
             ].map((tech) => (
               <span
                 key={tech}
