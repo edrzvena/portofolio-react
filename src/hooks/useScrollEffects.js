@@ -35,7 +35,7 @@ const useScrollEffects = () => {
     };
 
     const handleSectionChange = () => {
-      const sections = ['about', 'skills', 'experience', 'education', 'projects', 'contact'];
+      const sections = ['about', 'skills', 'experience', 'education', 'certificates', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
