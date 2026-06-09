@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
-import Card from '../components/Card';
+import Card from '../components/ui/Card';
 
 const Certificates = () => {
   const { isDarkMode } = useTheme();

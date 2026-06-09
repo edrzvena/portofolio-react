@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../../context/ThemeContext';
 
 // Card dengan style glassmorphism yang dipakai di banyak section
 // (Education, Experience, Projects, Certificates).

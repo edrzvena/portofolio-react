@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
-import Card from '../components/Card';
+import Card from '../components/ui/Card';
 import music_discord from "../assets/images/music-discord.png";
 import sentiment from "../assets/images/sentiment.jpeg";
 import pos from "../assets/images/pos.png";
