@@ -6,6 +6,7 @@ import About from '../sections/About';
 import Skills from '../sections/Skills';
 import Experience from '../sections/Experience';
 import Education from '../sections/Education';
+import Certificates from '../sections/Certificates';
 import Projects from '../sections/Projects';
 import Contact from '../sections/Contact';
 import { useTheme } from '../context/ThemeContext';
@@ -61,6 +62,7 @@ const Home = () => {
         <Skills />
         <Experience />
         <Education />
+        <Certificates />
         <Projects />
         <Contact />
         <Footer />
