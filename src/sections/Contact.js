@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { useTheme } from '../context/ThemeContext';
+import Button from '../components/ui/Button';
 
 const Contact = () => {
   const { isDarkMode } = useTheme();
@@ -76,12 +77,12 @@ const Contact = () => {
               rows="4"
               className={`w-full ${isDarkMode ? 'bg-black bg-opacity-30 border-white border-opacity-20' : 'bg-white border-gray-300'} border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all duration-300 text-sm sm:text-base`}
             ></textarea>
-            <button
+            <Button
               type="submit"
-              className="bg-gradient-to-r from-green-400 to-blue-500 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:shadow-cyan-500/30 hover:scale-105 w-full sm:w-auto text-sm sm:text-base"
+              className="py-3 px-8 rounded-lg w-full sm:w-auto"
             >
               Send Message
-            </button>
+            </Button>
           </form>
         </div>
       </div>

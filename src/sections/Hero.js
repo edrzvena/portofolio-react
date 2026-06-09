@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
+import Button from '../components/ui/Button';
 
 const Hero = ({ scrollToSection }) => {
   const { isDarkMode } = useTheme();
@@ -17,12 +18,12 @@ const Hero = ({ scrollToSection }) => {
           React <span className="text-green-400">|</span> Express <span className="text-green-400">|</span> Tailwind <span className="text-green-400">|</span> PostgreSQL
         </p>
         <div className="mt-8 flex justify-center">
-          <button
+          <Button
             onClick={() => scrollToSection('about')}
-            className="bg-gradient-to-r from-green-400 to-blue-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg z-50 transition-all duration-300 hover:shadow-cyan-500/30 hover:scale-105 text-sm sm:text-base"
+            className="py-3 px-6 rounded-full shadow-lg z-50"
           >
             View My Profile
-          </button>
+          </Button>
         </div>
 
         {/* Scroll indicator */}

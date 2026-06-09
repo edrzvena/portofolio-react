@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
+import Button from '../components/ui/Button';
 import profile from "../assets/images/myself_casual.jpg";
 import cvPDF from "../assets/files/Pedro_CV.pdf";
 
@@ -62,9 +63,10 @@ const About = () => {
 
             {/* Download CV Button */}
             <div className="mt-6 flex justify-center lg:justify-start">
-              <a
+              <Button
+                as="a"
                 href={cvPDF}
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-green-400 to-blue-500 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 hover:shadow-cyan-500/30 hover:scale-105 text-sm sm:text-base"
+                className="py-2 px-6 rounded-full"
               >
                 <span>Download CV</span>
 
@@ -80,7 +82,7 @@ const About = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-              </a>
+              </Button>
             </div>
           </div>
 
