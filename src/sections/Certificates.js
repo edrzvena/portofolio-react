@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
+import Card from '../components/Card';
 
 const Certificates = () => {
   const { isDarkMode } = useTheme();
@@ -22,7 +23,7 @@ const Certificates = () => {
               link: 'https://verify.skilljar.com/c/v8p393f46h7m'
             }
           ].map(cert => (
-            <div key={cert.title} className={`${isDarkMode ? 'bg-white bg-opacity-10' : 'bg-gray-800 bg-opacity-10'} backdrop-blur-lg rounded-lg border ${isDarkMode ? 'border-white border-opacity-20' : 'border-gray-300'} p-6 flex flex-col transition-transform duration-300 hover:scale-[1.01]`}>
+            <Card key={cert.title} className="flex flex-col">
               <h3 className={`text-xl font-bold mb-1 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{cert.title}</h3>
               <p className={`text-sm font-medium mb-3 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent`}>{cert.issuer}</p>
               <p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} flex-1`}>{cert.description}</p>
@@ -37,7 +38,7 @@ const Certificates = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

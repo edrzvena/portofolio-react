@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
+import { SECTION_IDS } from '../constants/sections';
 
 const useScrollEffects = () => {
   const blobRefs = useRef([]);
@@ -35,10 +36,9 @@ const useScrollEffects = () => {
     };
 
     const handleSectionChange = () => {
-      const sections = ['about', 'skills', 'experience', 'education', 'certificates', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
-      for (const section of sections) {
+      for (const section of SECTION_IDS) {
         const element = document.getElementById(section);
         if (element) {
           const offsetTop = element.offsetTop;

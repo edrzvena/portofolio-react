@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
+import Card from '../components/Card';
 
 const Experience = () => {
   const { isDarkMode } = useTheme();
@@ -40,14 +41,14 @@ const Experience = () => {
               ]
             }
           ].map(exp => (
-            <div key={exp.title} className={`${isDarkMode ? 'bg-white bg-opacity-10' : 'bg-gray-800 bg-opacity-10'} backdrop-blur-lg rounded-lg border ${isDarkMode ? 'border-white border-opacity-20' : 'border-gray-300'} p-6 transition-transform duration-300 hover:scale-[1.01]`}>
+            <Card key={exp.title}>
               <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{exp.title}</h3>
               <p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} mb-3`}>{exp.company}</p>
               <ul className={`list-disc ml-5 mt-2 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'} space-y-2`}>
                 {exp.tasks.map(task => <li key={task}>{task}</li>)}
               </ul>
               <span className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} mt-3 block`}>{exp.date}</span>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from 'react';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../../context/ThemeContext';
+import { SECTIONS } from '../../constants/sections';
 
 const Navbar = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen }) => {
   const { isDarkMode, toggleDarkMode } = useTheme();
@@ -14,7 +15,7 @@ const Navbar = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen }) =
           </div>
 
           <div className="flex flex-col items-start space-y-8">
-            {['About', 'Skills', 'Experience', 'Education', 'Certificates', 'Projects', 'Contact'].map(section => {
+            {SECTIONS.map(section => {
               const sectionId = section.toLowerCase();
               return (
                 <button
@@ -72,7 +73,7 @@ const Navbar = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen }) =
       {isMenuOpen && (
         <div className={`fixed inset-0 ${isDarkMode ? 'bg-black bg-opacity-90' : 'bg-white bg-opacity-95'} backdrop-blur-lg z-40 lg:hidden flex flex-col items-center justify-center`}>
           <div className="flex flex-col space-y-6 text-center w-full px-4">
-            {['About', 'Skills', 'Experience', 'Education', 'Certificates', 'Projects', 'Contact'].map(section => {
+            {SECTIONS.map(section => {
               const sectionId = section.toLowerCase();
               return (
                 <button
