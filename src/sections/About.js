@@ -2,7 +2,7 @@ import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 import Button from '../components/ui/Button';
 import profile from "../assets/images/myself_casual.jpg";
-import cvPDF from "../assets/files/Pedro_CV.pdf";
+import resumeFile from "../assets/files/Pedro_CV.pdf";
 
 const About = () => {
   const { isDarkMode } = useTheme();
@@ -65,7 +65,7 @@ const About = () => {
             <div className="mt-6 flex justify-center lg:justify-start">
               <Button
                 as="a"
-                href={cvPDF}
+                href={resumeFile}
                 className="py-2 px-6 rounded-full"
               >
                 <span>Download CV</span>

@@ -2,6 +2,7 @@ import React from 'react';
 import { FiArrowUpRight, FiMenu, FiX } from 'react-icons/fi';
 import { useTheme } from '../../context/ThemeContext';
 import { SECTIONS } from '../../constants/sections';
+import resumeFile from '../../assets/files/Pedro_CV.pdf';
 
 // Top floating pill navbar.
 // - Kiri: logo/nama (font mono)
@@ -20,7 +21,7 @@ const Navbar = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen }) =
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
       <div
-        className={`mx-auto flex max-w-[680px] items-center justify-between gap-3 rounded-full border ${surface} px-3 py-2 shadow-lg backdrop-blur-lg transition-colors duration-300 sm:px-4`}
+        className={`mx-auto flex max-w-[680px] items-center justify-between gap-3 rounded-full border ${surface} px-3 py-2 shadow-lg backdrop-blur-lg transition-colors duration-300 sm:px-4 lg:max-w-fit lg:justify-center lg:gap-6`}
       >
         {/* Kiri: logo / nama */}
         <button
@@ -73,7 +74,7 @@ const Navbar = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen }) =
           </button>
 
           <a
-            href="/resume.pdf"
+            href={resumeFile}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-green-400 to-blue-500 px-3 py-1.5 font-mono text-xs font-semibold text-white transition-all duration-300 hover:shadow-cyan-500/30 hover:scale-105"
