@@ -23,7 +23,7 @@ const Home = () => {
   } = useScrollEffects();
 
   return (
-    <div className={`${isDarkMode ? 'bg-black text-white' : 'bg-gray-100 text-gray-900'} font-sans overflow-x-hidden relative flex transition-colors duration-300 min-h-screen`}>
+    <div className={`${isDarkMode ? 'bg-black text-white' : 'bg-gray-100 text-gray-900'} font-sans overflow-x-hidden relative transition-colors duration-300 min-h-screen`}>
       <Navbar 
         activeSection={activeSection} 
         scrollToSection={scrollToSection} 
@@ -32,7 +32,7 @@ const Home = () => {
       />
 
       {/* Main Content */}
-      <div className="flex-1 w-full lg:ml-0 lg:pl-64 transition-all duration-300">
+      <div className="w-full transition-all duration-300">
         {/* Animated Background */}
         <div className="fixed inset-0">
           <div className="absolute inset-0">
