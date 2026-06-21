@@ -4,6 +4,7 @@ import Card from '../components/ui/Card';
 import music_discord from "../assets/images/music-discord.png";
 import sentiment from "../assets/images/sentiment.jpeg";
 import pos from "../assets/images/pos.png";
+import code_explainer from "../assets/images/code_explainer.jpg";
 
 const Projects = () => {
   const { isDarkMode } = useTheme();
@@ -13,6 +14,12 @@ const Projects = () => {
         <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-8 text-center">Projects</h2>
         <div className="grid grid-cols-1 gap-6">
           {[
+            {
+              title: 'Code Explainer',
+              description: 'Web app yang bisa jelasin syntax code pakai model Claude AI, pilih bahasanya, dapat penjelasan per blok logika dalam bahasa Indonesia.',
+              image: code_explainer,
+              link: 'https://github.com/edrzvena/code-explainer'
+            },
             {
               title: 'Bot Discord',
               description: 'Bot untuk memutar Musik di Platform Discord.',

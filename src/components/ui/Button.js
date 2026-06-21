@@ -7,7 +7,7 @@ import React from 'react';
 const Button = ({ as: Component = 'button', className = '', children, ...props }) => {
   return (
     <Component
-      className={`inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-400 to-blue-500 text-white font-semibold transition-all duration-300 hover:shadow-cyan-500/30 hover:scale-105 text-sm sm:text-base ${className}`}
+      className={`inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-400/30 to-blue-500/30 text-white font-semibold transition-all duration-300 hover:shadow-cyan-500/30 hover:scale-105 text-sm sm:text-base ${className}`}
       {...props}
     >
       {children}
