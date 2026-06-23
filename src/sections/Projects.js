@@ -5,6 +5,7 @@ import music_discord from "../assets/images/music-discord.png";
 import sentiment from "../assets/images/sentiment.jpeg";
 import pos from "../assets/images/pos.png";
 import code_explainer from "../assets/images/code_explainer.jpg";
+import daily_standup from "../assets/images/daily_standup.jpg";
 
 const Projects = () => {
   const { isDarkMode } = useTheme();
@@ -15,10 +16,22 @@ const Projects = () => {
         <div className="grid grid-cols-1 gap-6">
           {[
             {
+              title: 'Daily Standup',
+              description: 'Aplikasi web yang membantu developer membuat laporan standup harian secara instan, pengguna cukup mengetik apa yang dikerjakan dengan bahasa sehari-hari, lalu aplikasi otomatis mengubahnya menjadi laporan yang rapi dan siap dibagikan ke tim.',
+              image: daily_standup,
+              link: 'https://github.com/edrzvena/daily-standup'
+            },
+            {
               title: 'Code Explainer',
               description: 'Web app yang bisa jelasin syntax code pakai model Claude AI, pilih bahasanya, dapat penjelasan per blok logika dalam bahasa Indonesia.',
               image: code_explainer,
               link: 'https://github.com/edrzvena/code-explainer'
+            },
+            {
+              title: 'POS Cashier — Point of Sale Web App',
+              description: 'Membangun aplikasi kasir (Point of Sale) berbasis web untuk mendukung operasional transaksi penjualan harian pada bisnis cafe/retail menggunakan teknologi React dan Supabase.',
+              image: pos,
+              link: 'https://kasir-nya.vercel.app/'
             },
             {
               title: 'Bot Discord',
@@ -31,12 +44,6 @@ const Projects = () => {
               description: 'Mendeteksi sentimen emosi dari teks menggunakan teknik text mining untuk menganalisis dan mengidentifikasi emosi yang terkandung dalam kalimat.',
               image: sentiment,
               link: 'https://text-emotion-analyzer-pedro.vercel.app/'
-            },
-            {
-              title: 'POS Cashier — Point of Sale Web App',
-              description: 'Membangun aplikasi kasir (Point of Sale) berbasis web untuk mendukung operasional transaksi penjualan harian pada bisnis cafe/retail menggunakan teknologi React dan Supabase.',
-              image: pos,
-              link: 'https://kasir-nya.vercel.app/'
             },
           ].map(project => (
             <Card key={project.title} className="group">

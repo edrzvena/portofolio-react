@@ -47,7 +47,7 @@ const About = () => {
               <span className="font-semibold text-green-400">React</span>,{' '}
               <span className="font-semibold text-green-400">Node.js</span>, dan{' '}
               <span className="font-semibold text-green-400">PostgreSQL</span>, seperti{' '}
-              <span className="font-semibold text-green-400">Code Explainer, Text Emotion Analyzer</span> dan sistem{' '}
+              <span className="font-semibold text-green-400">Code Explainer, Daily Standup</span> dan sistem{' '}
               <span className="font-semibold text-green-400">POS Cashier</span> berbasis web. Saya juga
               memanfaatkan tools berbasis <span className="font-semibold text-green-400">AI</span> untuk
               membantu riset, debugging dan <span className="font-semibold text-green-400">integrasi AI ke dalam workflow</span>, sambil tetap berfokus pada pemahaman{' '}
