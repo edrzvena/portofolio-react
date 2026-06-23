@@ -31,7 +31,7 @@ const Projects = () => {
               title: 'POS Cashier — Point of Sale Web App',
               description: 'Membangun aplikasi kasir (Point of Sale) berbasis web untuk mendukung operasional transaksi penjualan harian pada bisnis cafe/retail menggunakan teknologi React dan Supabase.',
               image: pos,
-              link: 'https://kasir-nya.vercel.app/'
+              link: 'https://github.com/edrzvena/kasir-nya'
             },
             {
               title: 'Bot Discord',
@@ -43,7 +43,7 @@ const Projects = () => {
               title: 'Implementation Of Text Mining For Emotion Detection',
               description: 'Mendeteksi sentimen emosi dari teks menggunakan teknik text mining untuk menganalisis dan mengidentifikasi emosi yang terkandung dalam kalimat.',
               image: sentiment,
-              link: 'https://text-emotion-analyzer-pedro.vercel.app/'
+              link: 'https://github.com/edrzvena/text-emotion-analyzer'
             },
           ].map(project => (
             <Card key={project.title} className="group">
