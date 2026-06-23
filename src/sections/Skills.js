@@ -61,14 +61,14 @@ const Skills = () => {
               'REST API',
               'Postman',
               'Bruno',
-              'AI-Assisted Development (ChatGPT, Claude, Gemini, DeepSeek, Google Stitch)'
+              'AI-Assisted Development (Claude)'
             ].map((tech) => (
               <span
                 key={tech}
                 className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium flex items-center gap-2
                 transition-all duration-300 hover:scale-105 hover:-translate-y-[2px]
                 ${tech.includes("AI-Assisted")
-                    ? "bg-gradient-to-r from-green-400 to-blue-500 text-white"
+                    ? "bg-gradient-to-r text-white"
                     : isDarkMode
                       ? "bg-gray-700 text-gray-200 hover:bg-gray-600"
                       : "bg-gray-200 text-gray-700 hover:bg-gray-300"
