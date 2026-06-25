@@ -11,13 +11,13 @@ const Experience = () => {
         <div className="flex flex-col gap-6">
           {[
             {
-              "title": "Administrasi",
-              "company": "Toko Purnama",
-              "date": "Jul 2019 - Nov 2020",
+              "title": "IT Support",
+              "company": "PT. GFC Terpadu",
+              "date": "Nov 2022 - present",
               "tasks": [
-                "Mengelola operasional toko agar kegiatan penjualan berjalan lancar.",
-                "Memberikan pelayanan kepada pelanggan selama proses pembelian.",
-                "Mengelola dan memantau stok barang di gudang."
+                "Maintenance dan troubleshooting sistem CCTV.",
+                "Konfigurasi sistem CCTV sesuai kebutuhan operasional.",
+                "Dukungan teknis untuk memastikan sistem berjalan optimal."
               ]
             },
             {
@@ -28,16 +28,6 @@ const Experience = () => {
                 "Mengelola operasional toko online dan proses penjualan.",
                 "Membuat konten digital untuk promosi produk.",
                 "Menganalisis tren pasar untuk meningkatkan penjualan."
-              ]
-            },
-            {
-              "title": "IT Support",
-              "company": "PT. GFC Terpadu",
-              "date": "Nov 2022 - present",
-              "tasks": [
-                "Maintenance dan troubleshooting sistem CCTV.",
-                "Konfigurasi sistem CCTV sesuai kebutuhan operasional.",
-                "Dukungan teknis untuk memastikan sistem berjalan optimal."
               ]
             }
           ].map(exp => (

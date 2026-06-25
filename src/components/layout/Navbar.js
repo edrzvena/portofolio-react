@@ -2,7 +2,7 @@ import React from 'react';
 import { FiArrowUpRight, FiMenu, FiX } from 'react-icons/fi';
 import { useTheme } from '../../context/ThemeContext';
 import { SECTIONS } from '../../constants/sections';
-import resumeFile from '../../assets/files/Pedro_CV.pdf';
+import resumeFile from '../../assets/files/PEDRO WIDYADHARTA CIADY.pdf';
 
 // Top floating pill navbar.
 // - Kiri: logo/nama (font mono)

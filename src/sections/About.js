@@ -2,7 +2,7 @@ import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 import Button from '../components/ui/Button';
 import profile from "../assets/images/myself_casual.jpg";
-import resumeFile from "../assets/files/Pedro_CV.pdf";
+import resumeFile from "../assets/files/PEDRO WIDYADHARTA CIADY.pdf";
 
 const About = () => {
   const { isDarkMode } = useTheme();
