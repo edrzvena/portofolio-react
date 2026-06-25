@@ -27,35 +27,6 @@ Features dark/light mode, smooth scroll animations, and an integrated contact fo
 
 ---
 
-## Skills
-
-### Core
-
-- **Frontend** — React
-- **Backend** — Node.js, Express
-- **Database** — PostgreSQL
-- **Styling** — Tailwind CSS
-- **UI/UX** — Google Stitch AI
-- **Deployment** — Vercel
-
-### Tools & Others
-
-`Git` &nbsp;·&nbsp; `GitHub` &nbsp;·&nbsp; `REST API` &nbsp;·&nbsp; `Postman` &nbsp;·&nbsp; `Bruno`
-
-### AI-Assisted Development
-
-`ChatGPT` &nbsp;·&nbsp; `Claude` &nbsp;·&nbsp; `Gemini` &nbsp;·&nbsp; `DeepSeek` &nbsp;·&nbsp; `Google Stitch`
-
----
-
-
-
-
-
-
-
-
-
 ## Contact
 
 <div align="center">
