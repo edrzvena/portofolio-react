@@ -68,10 +68,12 @@ const Skills = () => {
                 className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium flex items-center gap-2
                 transition-all duration-300 hover:scale-105 hover:-translate-y-[2px]
                 ${tech.includes("AI-Assisted")
-                    ? "bg-gradient-to-r text-white"
+                    ? isDarkMode
+                      ? "bg-gradient-to-r text-white"
+                      : "bg-gradient-to-r text-black"
                     : isDarkMode
-                      ? "bg-gray-700 text-gray-200 hover:bg-gray-600"
-                      : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                      ? "bg-gray-700 text-white hover:bg-gray-600"
+                      : "bg-gray-200 text-black hover:bg-gray-300"
                   }`}
               >
                 {tech}
