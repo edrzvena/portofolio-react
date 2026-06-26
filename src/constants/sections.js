@@ -2,7 +2,6 @@
 // Dipakai oleh Navbar (label menu) dan useScrollEffects (deteksi section aktif).
 // Urutannya harus sama dengan urutan render di pages/Home.js.
 export const SECTIONS = [
-  'About',
   'Skills',
   'Experience',
   'Education',

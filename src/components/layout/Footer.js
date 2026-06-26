@@ -1,11 +1,37 @@
 import React from 'react';
-import { useTheme } from '../../context/ThemeContext';
+import resumeFile from '../../assets/files/PEDRO WIDYADHARTA CIADY.pdf';
+
+const links = [
+  { name: 'GitHub', href: 'https://github.com/edrzvena' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/pedro-widyadharta-ciady-773209350' },
+  { name: 'Email', href: 'mailto:widyadharta@gmail.com' },
+  { name: 'Resume', href: resumeFile },
+];
 
 const Footer = () => {
-  const { isDarkMode } = useTheme();
   return (
-    <footer className={`py-8 text-center ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} px-4`}>
-      <p className="text-sm">© Pedro Widya. All rights reserved.</p>
+    <footer className="border-t border-line bg-white px-4 py-10 sm:px-8 lg:px-16">
+      <div className="mx-auto max-w-6xl">
+        <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+          <span className="font-mono text-sm font-semibold text-ink">{'</> Pedro'}</span>
+          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+            {links.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-sm text-muted transition-colors duration-200 hover:text-accent"
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
+        </div>
+        <p className="mt-8 text-center text-sm text-muted sm:text-left">
+          © Pedro Widya. All rights reserved.
+        </p>
+      </div>
     </footer>
   );
 };

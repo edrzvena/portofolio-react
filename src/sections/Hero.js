@@ -1,36 +1,67 @@
 import React from 'react';
-import { useTheme } from '../context/ThemeContext';
+import { FiDownload } from 'react-icons/fi';
 import Button from '../components/ui/Button';
+import CodeCard from '../components/ui/CodeCard';
+import profile from '../assets/images/myself_casual.jpg';
+import resumeFile from '../assets/files/PEDRO WIDYADHARTA CIADY.pdf';
+
+const stats = [
+  { value: '5+', label: 'Projects' },
+  { value: '2', label: 'Certifications' },
+  { value: '12', label: 'Technologies' },
+];
 
 const Hero = ({ scrollToSection }) => {
-  const { isDarkMode } = useTheme();
   return (
-    <section className="min-h-screen flex items-center justify-center text-center relative z-10 px-4">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-4">
-          Hi, I'm <span className="inline-block overflow-hidden whitespace-nowrap animate-typing">Pedro Widya</span>
-        </h1>
-        <p className={`text-lg sm:text-xl ${isDarkMode ? 'text-gray-400' : 'text-gray-600'} mb-1`}>
-          Full-Stack Developer
-        </p>
+    <section id="home" className="relative flex min-h-screen items-center px-4 pt-28 pb-16 sm:px-8 lg:px-16">
+      <div className="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-2">
 
-        <p className={`text-sm sm:text-base ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} mb-2`}>
-          React <span className="text-green-400">|</span> Express <span className="text-green-400">|</span> Tailwind <span className="text-green-400">|</span> PostgreSQL
-        </p>
-        <div className="mt-8 flex justify-center">
-          <Button
-            onClick={() => scrollToSection('about')}
-            className="py-3 px-6 rounded-full shadow-lg z-50"
-          >
-            View My Profile
-          </Button>
+        {/* Text */}
+        <div className="text-center lg:text-left">
+          {/* Avatar */}
+          <img
+            src={profile}
+            alt="Pedro Widya"
+            className="mx-auto mb-5 h-28 w-28 rounded-full border border-line object-cover shadow-air sm:h-32 sm:w-32 lg:mx-0"
+          />
+          <p className="mb-3 font-mono text-sm text-accent">{'// Full-Stack Developer'}</p>
+
+          <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-ink sm:text-5xl md:text-6xl">
+            Hi, I'm <span className="text-accent">Pedro Widya</span>
+          </h1>
+
+          <p className="mx-auto mt-5 max-w-xl text-lg text-muted lg:mx-0">
+            Membangun aplikasi web yang bersih, scalable, dan terstruktur dengan React, Node.js, dan PostgreSQL.
+          </p>
+
+          <p className="mt-4 font-mono text-sm text-muted">
+            JavaScript <span className="text-line-strong">/</span> TypeScript <span className="text-line-strong">/</span> React <span className="text-line-strong">/</span> Express <span className="text-line-strong">/</span> Tailwind <span className="text-line-strong">/</span> PostgreSQL
+          </p>
+
+          <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
+            <Button onClick={() => scrollToSection('projects')} className="px-6 py-3">
+              View Projects
+            </Button>
+            <Button as="a" href={resumeFile} target="_blank" rel="noopener noreferrer" variant="secondary" className="px-6 py-3">
+              <span>Download CV</span>
+              <FiDownload className="h-4 w-4" />
+            </Button>
+          </div>
+
+          {/* Honest stats */}
+          <div className="mt-10 flex justify-center gap-8 lg:justify-start">
+            {stats.map((s) => (
+              <div key={s.label} className="text-center lg:text-left">
+                <div className="font-display text-2xl font-bold text-ink">{s.value}</div>
+                <div className="font-mono text-xs uppercase tracking-wider text-muted">{s.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className={`w-6 h-10 border-2 ${isDarkMode ? 'border-gray-400' : 'border-gray-500'} rounded-full flex justify-center`}>
-            <div className={`w-1 h-3 ${isDarkMode ? 'bg-gray-400' : 'bg-gray-500'} rounded-full mt-2`}></div>
-          </div>
+        {/* Code card */}
+        <div className="hidden lg:block">
+          <CodeCard />
         </div>
       </div>
     </section>

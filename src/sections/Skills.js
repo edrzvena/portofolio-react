@@ -1,80 +1,58 @@
 import React from 'react';
-import { useTheme } from '../context/ThemeContext';
+import { SiJavascript, SiTypescript, SiPython, SiReact, SiNodedotjs, SiExpress, SiPostgresql, SiSupabase, SiTailwindcss, SiVercel, SiGit, SiBruno } from 'react-icons/si';
+
+const skills = [
+  { title: 'JavaScript', Icon: SiJavascript },
+  { title: 'TypeScript', Icon: SiTypescript },
+  { title: 'Python', Icon: SiPython },
+  { title: 'React', Icon: SiReact },
+  { title: 'Node.js', Icon: SiNodedotjs },
+  { title: 'Express', Icon: SiExpress },
+  { title: 'PostgreSQL', Icon: SiPostgresql },
+  { title: 'Supabase', Icon: SiSupabase },
+  { title: 'Tailwind CSS', Icon: SiTailwindcss },
+  { title: 'Vercel', Icon: SiVercel },
+  { title: 'Git', Icon: SiGit },
+  { title: 'Bruno API', Icon: SiBruno },
+];
+
+const tools = ['GitHub', 'REST API', 'VS Code', 'AI-Assisted Development (Claude)'];
 
 const Skills = () => {
-  const { isDarkMode } = useTheme();
   return (
-    <section id="skills" className="min-h-screen py-12 px-4 sm:px-8 lg:px-16 relative">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-8 text-center">
-          My Skills
+    <section id="skills" className="py-24 px-4 sm:px-8 lg:px-16">
+      <div className="mx-auto max-w-6xl">
+        <p className="mb-3 text-center font-mono text-sm text-accent">{'// 02 — stack'}</p>
+        <h2 className="mb-3 text-center text-3xl font-semibold tracking-tight text-ink">
+          Core Technology Stack
         </h2>
+        <p className="mx-auto mb-12 max-w-2xl text-center text-muted">
+          Tools &amp; framework yang gw pakai untuk membangun web modern.
+        </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            { title: 'Frontend (React)', icon: '⚛️', color: 'from-yellow-400 to-blue-500' },
-            { title: 'Backend (Node.js & Express)', icon: '🛠️', color: 'from-green-400 to-emerald-600' },
-            { title: 'Database (PostgreSQL)', icon: '🗄️', color: 'from-blue-400 to-purple-500' },
-            { title: 'CSS (Tailwind)', icon: '🎨', color: 'from-pink-400 to-purple-500' },
-            { title: 'Deployment (Vercel)', icon: '🚀', color: 'from-gray-700 to-gray-900' },
-            { title: 'UI/UX (Stitch Google AI)', icon: '✨', color: 'from-red-400 to-purple-500' },
-          ].map((skill) => (
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          {skills.map(({ title, Icon }) => (
             <div
-              key={skill.title}
-              className={`relative group overflow-hidden rounded-2xl p-6 ${isDarkMode
-                ? 'bg-gradient-to-br from-gray-800 to-gray-900'
-                : 'bg-gradient-to-br from-white to-gray-100'
-                } shadow-lg transform transition-all duration-500 hover:-translate-y-1`}
+              key={title}
+              className="flex flex-col items-center gap-3 rounded-xl border border-line bg-white p-5 text-center transition-all duration-300 hover:border-line-strong hover:shadow-air"
             >
-              <div className="text-center mb-4">
-                <span className="text-4xl">{skill.icon}</span>
-              </div>
-
-              <h3
-                className={`text-xl font-bold text-center ${isDarkMode ? 'text-white' : 'text-gray-800'
-                  }`}
-              >
-                {skill.title}
-              </h3>
+              <Icon className="h-8 w-8 flex-shrink-0 text-accent" aria-hidden="true" />
+              <h3 className="text-xs font-medium leading-snug text-ink sm:text-sm">{title}</h3>
             </div>
           ))}
         </div>
 
         {/* Tools & Others */}
-        <div
-          className={`mt-12 p-6 rounded-2xl ${isDarkMode
-            ? 'bg-gradient-to-r from-gray-800 to-gray-900'
-            : 'bg-gradient-to-r from-white to-gray-100'
-            } shadow-lg`}
-        >
-          <h3
-            className={`text-xl font-bold mb-6 text-center ${isDarkMode ? 'text-white' : 'text-gray-800'
-              }`}
-          >
-            Tools & Others
+        <div className="mt-12 rounded-xl border border-line bg-surface p-6">
+          <h3 className="mb-6 text-center text-lg font-semibold text-ink">
+            Tools &amp; Others
           </h3>
 
-          <div className="flex flex-wrap justify-center gap-4">
-            {[
-              'Git',
-              'GitHub',
-              'REST API',
-              'Postman',
-              'Bruno',
-              'AI-Assisted Development (Claude)'
-            ].map((tech) => (
+          <div className="flex flex-wrap justify-center gap-3">
+            {tools.map((tech) => (
               <span
                 key={tech}
-                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium flex items-center gap-2
-                transition-all duration-300 hover:scale-105 hover:-translate-y-[2px]
-                ${tech.includes("AI-Assisted")
-                    ? isDarkMode
-                      ? "bg-gradient-to-r text-white"
-                      : "bg-gradient-to-r text-black"
-                    : isDarkMode
-                      ? "bg-gray-700 text-white hover:bg-gray-600"
-                      : "bg-gray-200 text-black hover:bg-gray-300"
-                  }`}
+                className="rounded-lg border border-line bg-white px-4 py-2 font-mono text-xs text-muted transition-colors duration-200 hover:border-line-strong hover:text-ink sm:text-sm"
               >
                 {tech}
               </span>

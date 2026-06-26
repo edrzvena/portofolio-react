@@ -1,10 +1,15 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { useTheme } from '../context/ThemeContext';
+import { FiMail, FiLinkedin, FiGithub } from 'react-icons/fi';
 import Button from '../components/ui/Button';
 
+const socials = [
+  { name: 'Email', Icon: FiMail, link: 'mailto:widyadharta@gmail.com' },
+  { name: 'LinkedIn', Icon: FiLinkedin, link: 'https://www.linkedin.com/in/pedro-widyadharta-ciady-773209350' },
+  { name: 'GitHub', Icon: FiGithub, link: 'https://github.com/edrzvena' },
+];
+
 const Contact = () => {
-  const { isDarkMode } = useTheme();
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -26,61 +31,59 @@ const Contact = () => {
       });
   };
 
+  const inputClass = "w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink placeholder:text-muted transition-all duration-200 focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/10 sm:text-base";
+
   return (
-    <section id="contact" className={`min-h-screen py-12 px-4 sm:px-8 lg:px-16 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-100'}`}>
-      <div className="max-w-5xl mx-auto text-center relative z-10">
-        <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-8">
-          Let's Connect!
+    <section id="contact" className="bg-band py-24 px-4 sm:px-8 lg:px-16">
+      <div className="mx-auto max-w-5xl text-center">
+        <p className="mb-3 font-mono text-sm text-accent">{'// 06 — contact'}</p>
+        <h2 className="mb-4 text-3xl font-semibold tracking-tight text-ink">
+          Get in Touch
         </h2>
-        <p className={`text-lg ${isDarkMode ? 'text-gray-400' : 'text-gray-600'} mb-8`}>
+        <p className="mb-10 text-lg text-muted">
           Tertarik bekerja sama atau sekedar ngobrol? Jangan ragu untuk menghubungi saya!
         </p>
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {[
-            { name: '📧 Email', link: 'mailto:widyadharta@gmail.com', color: 'hover:shadow-cyan-500/30' },
-            { name: '🔗 LinkedIn', link: 'linkedin.com/in/pedro-widyadharta-ciady-773209350', color: 'hover:shadow-blue-500/30' },
-            { name: '🐱 GitHub', link: 'https://github.com/edrzvena', color: 'hover:shadow-purple-500/30' },
-          ].map((item, index) => (
+
+        <div className="mb-12 flex flex-wrap justify-center gap-4">
+          {socials.map(({ name, Icon, link }) => (
             <a
-              key={index}
-              href={item.link}
+              key={name}
+              href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`${isDarkMode ? 'bg-white bg-opacity-10' : 'bg-gray-800 bg-opacity-10'} backdrop-blur-lg border ${isDarkMode ? 'border-white border-opacity-20' : 'border-gray-300'} rounded-lg px-4 py-2 sm:px-6 sm:py-3 text-base font-semibold transition-all duration-300 hover:scale-105 ${item.color}`}
+              className="inline-flex items-center gap-2 rounded-xl border border-line bg-white px-5 py-2.5 text-sm font-medium text-ink transition-all duration-300 hover:border-line-strong hover:shadow-air sm:text-base"
             >
-              {item.name}
+              <Icon className="h-4 w-4 text-accent" />
+              {name}
             </a>
           ))}
         </div>
 
         {/* Contact Form */}
-        <div className={`mt-8 ${isDarkMode ? 'bg-white bg-opacity-10' : 'bg-gray-800 bg-opacity-10'} backdrop-blur-lg rounded-lg border ${isDarkMode ? 'border-white border-opacity-20' : 'border-gray-300'} p-6 max-w-2xl mx-auto`}>
-          <h3 className={`text-xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Send me a message</h3>
+        <div className="mx-auto mt-8 max-w-2xl rounded-xl border border-line bg-white p-6 text-left shadow-air">
+          <h3 className="mb-6 text-xl font-semibold text-ink">Send me a message</h3>
           <form ref={form} onSubmit={sendEmail} className="space-y-4">
             <div className="grid grid-cols-1 gap-4">
               <input
                 type="text"
                 name="user_name"
                 placeholder="Your Name"
-                className={`${isDarkMode ? 'bg-black bg-opacity-30 border-white border-opacity-20' : 'bg-white border-gray-300'} border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all duration-300 text-sm sm:text-base`}
+                className={inputClass}
               />
               <input
                 type="email"
                 name="user_email"
                 placeholder="Your Email"
-                className={`${isDarkMode ? 'bg-black bg-opacity-30 border-white border-opacity-20' : 'bg-white border-gray-300'} border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all duration-300 text-sm sm:text-base`}
+                className={inputClass}
               />
             </div>
             <textarea
               name="message"
               placeholder="Your Message"
               rows="4"
-              className={`w-full ${isDarkMode ? 'bg-black bg-opacity-30 border-white border-opacity-20' : 'bg-white border-gray-300'} border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all duration-300 text-sm sm:text-base`}
+              className={inputClass}
             ></textarea>
-            <Button
-              type="submit"
-              className="py-3 px-8 rounded-lg w-full sm:w-auto"
-            >
+            <Button type="submit" className="w-full px-8 py-3 sm:w-auto">
               Send Message
             </Button>
           </form>

@@ -1,40 +1,11 @@
-import { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { SECTION_IDS } from '../constants/sections';
 
 const useScrollEffects = () => {
-  const blobRefs = useRef([]);
-  const [activeSection, setActiveSection] = useState('about');
+  const [activeSection, setActiveSection] = useState(SECTION_IDS[0]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const initialPositions = useMemo(() => [
-    { x: -4, y: 0 },
-    { x: -4, y: 0 },
-    { x: 20, y: -8 },
-    { x: 20, y: -8 },
-  ], []);
-
   useEffect(() => {
-    let requestId;
-
-    const handleScroll = () => {
-      const newScroll = window.pageYOffset;
-
-      blobRefs.current.forEach((blob, index) => {
-        if (!blob) return;
-        const initialPos = initialPositions[index];
-        const xOffset = Math.sin(newScroll / 100 + index * 0.5) * 340;
-        const yOffset = Math.cos(newScroll / 100 + index * 0.5) * 40;
-
-        const x = initialPos.x + xOffset;
-        const y = initialPos.y + yOffset;
-
-        blob.style.transform = `translate(${x}px, ${y}px)`;
-        blob.style.transition = "transform 1.4s ease-out";
-      });
-
-      requestId = requestAnimationFrame(handleScroll);
-    };
-
     const handleSectionChange = () => {
       const scrollPosition = window.scrollY + 100;
 
@@ -52,14 +23,9 @@ const useScrollEffects = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
     window.addEventListener("scroll", handleSectionChange);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("scroll", handleSectionChange);
-      cancelAnimationFrame(requestId);
-    };
-  }, [initialPositions]);
+    return () => window.removeEventListener("scroll", handleSectionChange);
+  }, []);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -71,7 +37,6 @@ const useScrollEffects = () => {
   };
 
   return {
-    blobRefs,
     activeSection,
     isMenuOpen,
     setIsMenuOpen,
