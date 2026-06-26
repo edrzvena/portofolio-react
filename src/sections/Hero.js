@@ -31,7 +31,7 @@ const Hero = ({ scrollToSection }) => {
           </h1>
 
           <p className="mx-auto mt-5 max-w-xl text-lg text-muted lg:mx-0">
-            Membangun aplikasi web yang bersih, scalable, dan terstruktur dengan React, Node.js, dan PostgreSQL.
+            "Talk is cheap. Show me the code." — Linus Torvalds
           </p>
 
           <p className="mt-4 font-mono text-sm text-muted">
