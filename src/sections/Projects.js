@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { FiArrowRight } from 'react-icons/fi';
 import Card from '../components/ui/Card';
 import music_discord from "../assets/images/music-discord.png";
@@ -40,6 +40,52 @@ const projects = [
   },
 ];
 
+const ProjectCard = ({ project }) => {
+  const descRef = useRef(null);
+  const [expanded, setExpanded] = useState(false);
+  const [isClamped, setIsClamped] = useState(false);
+
+  useEffect(() => {
+    const el = descRef.current;
+    if (el) {
+      // Deteksi apakah teks kepotong saat di-clamp (butuh "Read more").
+      setIsClamped(el.scrollHeight > el.clientHeight + 1);
+    }
+  }, []);
+
+  return (
+    <Card className="group flex flex-col">
+      <div className="mb-4 overflow-hidden rounded-lg border border-line">
+        <img src={project.image} alt={project.title} className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+      </div>
+      <h3 className="mb-2 text-lg font-semibold text-ink">{project.title}</h3>
+      <p
+        ref={descRef}
+        className={`text-sm text-muted ${expanded ? '' : 'line-clamp-3'}`}
+      >
+        {project.description}
+      </p>
+      {(isClamped || expanded) && (
+        <button
+          onClick={() => setExpanded((v) => !v)}
+          className="mt-1 self-start text-xs font-medium text-accent transition-colors duration-200 hover:text-accent-hover"
+        >
+          {expanded ? 'Read less' : 'Read more'}
+        </button>
+      )}
+      <a
+        href={project.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-medium text-accent transition-all duration-200 hover:text-accent-hover group-hover:gap-2.5"
+      >
+        <span>View Project</span>
+        <FiArrowRight className="h-4 w-4" />
+      </a>
+    </Card>
+  );
+};
+
 const Projects = () => {
   return (
     <section id="projects" className="py-24 px-4 sm:px-8 lg:px-16">
@@ -62,22 +108,7 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map(project => (
-            <Card key={project.title} className="group flex flex-col">
-              <div className="mb-4 overflow-hidden rounded-lg border border-line">
-                <img src={project.image} alt={project.title} className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-              </div>
-              <h3 className="mb-2 text-lg font-semibold text-ink">{project.title}</h3>
-              <p className="mb-4 line-clamp-3 flex-1 text-sm text-muted">{project.description}</p>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-all duration-200 hover:text-accent-hover group-hover:gap-2.5"
-              >
-                <span>View Project</span>
-                <FiArrowRight className="h-4 w-4" />
-              </a>
-            </Card>
+            <ProjectCard key={project.title} project={project} />
           ))}
         </div>
       </div>

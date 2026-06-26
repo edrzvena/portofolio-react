@@ -2,13 +2,15 @@ import React from 'react';
 
 const experiences = [
   {
-    title: "IT Support",
+    title: "Marketing Support",
     company: "PT. GFC Terpadu",
     date: "Nov 2022 - present",
     tasks: [
-      "Maintenance dan troubleshooting sistem CCTV.",
-      "Konfigurasi sistem CCTV sesuai kebutuhan operasional.",
-      "Dukungan teknis untuk memastikan sistem berjalan optimal."
+      "Menyusun dan memonitor KPI toko sebagai instrumen evaluasi performa operasional cabang, serta menyampaikan laporan hasil penilaian kepada manajemen secara berkala.",
+      "Melaksanakan penilaian standar visual merchandising dan kualitas pelayanan toko melalui pemantauan rekaman CCTV sesuai standar operasional perusahaan.",
+      "Mengelola proses pengadaan peralatan CCTV mulai dari koordinasi pembelian, verifikasi invoice, hingga dokumentasi administrasi untuk kebutuhan toko.",
+      "Mendukung pelaksanaan kampanye pemasaran melalui pengelolaan dan distribusi materi promosi (TVC, media digital, dan materi cetak) agar strategi pemasaran berjalan tepat sasaran.",
+      "Berkoordinasi lintas fungsi antara tim Marketing dan Supervisor toko dalam proses penilaian, pelaporan performa, serta tindak lanjut hasil evaluasi cabang."
     ]
   },
   {
@@ -16,9 +18,9 @@ const experiences = [
     company: "PT. Usaha Inti Bersama",
     date: "Nov 2020 - Mar 2022",
     tasks: [
-      "Mengelola operasional toko online dan proses penjualan.",
-      "Membuat konten digital untuk promosi produk.",
-      "Menganalisis tren pasar untuk meningkatkan penjualan."
+      "Mengelola operasional toko online, mencakup manajemen produk, pemrosesan pesanan, dan pemantauan performa penjualan untuk memastikan kelancaran transaksi digital.",
+      "Menyusun dan menginput laporan penjualan harian secara akurat, termasuk pencatatan arus kas masuk dan kas keluar sebagai bahan evaluasi keuangan operasional.",
+      "Mengelola pencatatan kas kecil dan kas besar secara tertib dan terdokumentasi untuk mendukung transparansi dan akuntabilitas keuangan toko."
     ]
   }
 ];
