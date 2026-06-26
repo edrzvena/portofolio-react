@@ -40,11 +40,8 @@ const Contact = () => {
       <Reveal className="mx-auto max-w-5xl text-center">
         <p className="mb-3 font-mono text-sm text-accent">{'// contact'}</p>
         <h2 className="mb-4 text-3xl font-semibold tracking-tight text-ink">
-          Get in Touch
+          Contact Me
         </h2>
-        <p className="mb-10 text-lg text-muted">
-          Tertarik bekerja sama atau sekedar ngobrol? Jangan ragu untuk menghubungi saya!
-        </p>
 
         <div className="mb-12 flex flex-wrap justify-center gap-4">
           {socials.map(({ name, Icon, link }) => (
