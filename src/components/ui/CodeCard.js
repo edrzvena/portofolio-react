@@ -1,8 +1,8 @@
 import React from 'react';
 
 // Kartu snippet kode statis bergaya editor — satu-satunya elemen gelap di situs,
-// sebagai aksen visual "developer" di Hero (meniru jendela kode pada mockup).
-// Murni dekoratif; tidak ada logika.
+// sebagai aksen visual "developer" di Hero. Murni dekoratif; tidak ada logika.
+// Konten dijaga sinkron dengan Hero (role + tech stack).
 const CodeCard = () => {
   return (
     <div className="overflow-hidden rounded-xl border border-line-strong/40 bg-code shadow-air">
@@ -29,18 +29,27 @@ const CodeCard = () => {
           {'\n'}
           {'  '}<span className="text-slate-300">role</span>
           <span className="text-slate-400">:</span>{' '}
-          <span className="text-emerald-300">'Full-Stack Developer'</span>
+          <span className="text-emerald-300">'Web Developer'</span>
           <span className="text-slate-400">,</span>
           {'\n'}
           {'  '}<span className="text-slate-300">stack</span>
-          <span className="text-slate-400">:</span>{' '}
-          <span className="text-slate-400">[</span>
+          <span className="text-slate-400">: [</span>
+          {'\n'}
+          {'    '}<span className="text-emerald-300">'JavaScript'</span>
+          <span className="text-slate-400">,</span>{' '}
           <span className="text-emerald-300">'TypeScript'</span>
           <span className="text-slate-400">,</span>{' '}
           <span className="text-emerald-300">'React'</span>
+          <span className="text-slate-400">,</span>
+          {'\n'}
+          {'    '}<span className="text-emerald-300">'Express'</span>
           <span className="text-slate-400">,</span>{' '}
-          <span className="text-emerald-300">'Node'</span>
-          <span className="text-slate-400">],</span>
+          <span className="text-emerald-300">'Tailwind'</span>
+          <span className="text-slate-400">,</span>{' '}
+          <span className="text-emerald-300">'PostgreSQL'</span>
+          <span className="text-slate-400">,</span>
+          {'\n'}
+          {'  '}<span className="text-slate-400">],</span>
           {'\n'}
           {'  '}<span className="text-slate-300">focus</span>
           <span className="text-slate-400">:</span>{' '}
