@@ -1,7 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { FiMail, FiLinkedin, FiGithub } from 'react-icons/fi';
 import Button from '../components/ui/Button';
+import Reveal from '../components/ui/Reveal';
 
 const socials = [
   { name: 'Email', Icon: FiMail, link: 'mailto:widyadharta@gmail.com' },
@@ -11,9 +12,11 @@ const socials = [
 
 const Contact = () => {
   const form = useRef();
+  const [status, setStatus] = useState('idle'); // idle | sending | success | error
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setStatus('sending');
 
     emailjs.sendForm(
       'service_l0l5v3q',
@@ -21,13 +24,12 @@ const Contact = () => {
       form.current,
       'aYjju7dOXUuWFJ70z'
     )
-      .then((result) => {
-        console.log(result.text);
-        alert("Message sent!");
+      .then(() => {
+        setStatus('success');
+        form.current.reset();
       })
-      .catch((error) => {
-        console.log(error);
-        alert("Failed: " + error.text);
+      .catch(() => {
+        setStatus('error');
       });
   };
 
@@ -35,8 +37,8 @@ const Contact = () => {
 
   return (
     <section id="contact" className="bg-band py-24 px-4 sm:px-8 lg:px-16">
-      <div className="mx-auto max-w-5xl text-center">
-        <p className="mb-3 font-mono text-sm text-accent">{'// 06 — contact'}</p>
+      <Reveal className="mx-auto max-w-5xl text-center">
+        <p className="mb-3 font-mono text-sm text-accent">{'// contact'}</p>
         <h2 className="mb-4 text-3xl font-semibold tracking-tight text-ink">
           Get in Touch
         </h2>
@@ -68,12 +70,14 @@ const Contact = () => {
                 type="text"
                 name="user_name"
                 placeholder="Your Name"
+                required
                 className={inputClass}
               />
               <input
                 type="email"
                 name="user_email"
                 placeholder="Your Email"
+                required
                 className={inputClass}
               />
             </div>
@@ -81,14 +85,26 @@ const Contact = () => {
               name="message"
               placeholder="Your Message"
               rows="4"
+              required
               className={inputClass}
             ></textarea>
-            <Button type="submit" className="w-full px-8 py-3 sm:w-auto">
-              Send Message
+            <Button type="submit" disabled={status === 'sending'} className="w-full px-8 py-3 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto">
+              {status === 'sending' ? 'Sending…' : 'Send Message'}
             </Button>
+
+            {status === 'success' && (
+              <p className="text-sm font-medium text-emerald-600">
+                Pesan terkirim, makasih! Gw bakal bales secepatnya.
+              </p>
+            )}
+            {status === 'error' && (
+              <p className="text-sm font-medium text-red-600">
+                Gagal kirim. Coba lagi, atau email langsung ke widyadharta@gmail.com.
+              </p>
+            )}
           </form>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 };

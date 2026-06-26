@@ -1,4 +1,5 @@
 import React from 'react';
+import Reveal from '../components/ui/Reveal';
 
 const experiences = [
   {
@@ -28,8 +29,8 @@ const experiences = [
 const Experience = () => {
   return (
     <section id="experience" className="py-24 px-4 sm:px-8 lg:px-16">
-      <div className="mx-auto max-w-4xl">
-        <p className="mb-3 text-center font-mono text-sm text-accent">{'// 03 — journey'}</p>
+      <Reveal className="mx-auto max-w-4xl">
+        <p className="mb-3 text-center font-mono text-sm text-accent">{'// experience'}</p>
         <h2 className="mb-12 text-center text-3xl font-semibold tracking-tight text-ink">Experience</h2>
 
         <div className="relative ml-2 border-l border-line pl-8 sm:ml-4">
@@ -48,7 +49,7 @@ const Experience = () => {
             ))}
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 };

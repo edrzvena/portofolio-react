@@ -1,5 +1,6 @@
 import React from 'react';
 import { SiJavascript, SiTypescript, SiPython, SiReact, SiNodedotjs, SiExpress, SiPostgresql, SiSupabase, SiTailwindcss, SiVercel, SiGit, SiBruno } from 'react-icons/si';
+import Reveal from '../components/ui/Reveal';
 
 const skills = [
   { title: 'JavaScript', Icon: SiJavascript },
@@ -21,8 +22,8 @@ const tools = ['GitHub', 'REST API', 'VS Code', 'AI-Assisted Development (Claude
 const Skills = () => {
   return (
     <section id="skills" className="py-24 px-4 sm:px-8 lg:px-16">
-      <div className="mx-auto max-w-6xl">
-        <p className="mb-3 text-center font-mono text-sm text-accent">{'// 02 — stack'}</p>
+      <Reveal className="mx-auto max-w-6xl">
+        <p className="mb-3 text-center font-mono text-sm text-accent">{'// stack'}</p>
         <h2 className="mb-3 text-center text-3xl font-semibold tracking-tight text-ink">
           Core Technology Stack
         </h2>
@@ -59,7 +60,7 @@ const Skills = () => {
             ))}
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 };

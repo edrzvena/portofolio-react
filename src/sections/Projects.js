@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { FiArrowRight } from 'react-icons/fi';
 import Card from '../components/ui/Card';
+import Reveal from '../components/ui/Reveal';
 import music_discord from "../assets/images/music-discord.png";
 import sentiment from "../assets/images/sentiment.jpeg";
 import pos from "../assets/images/pos.png";
@@ -56,7 +57,7 @@ const ProjectCard = ({ project }) => {
   return (
     <Card className="group flex flex-col">
       <div className="mb-4 overflow-hidden rounded-lg border border-line">
-        <img src={project.image} alt={project.title} className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        <img src={project.image} alt={project.title} loading="lazy" className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
       </div>
       <h3 className="mb-2 text-lg font-semibold text-ink">{project.title}</h3>
       <p
@@ -89,10 +90,10 @@ const ProjectCard = ({ project }) => {
 const Projects = () => {
   return (
     <section id="projects" className="py-24 px-4 sm:px-8 lg:px-16">
-      <div className="mx-auto max-w-6xl">
+      <Reveal className="mx-auto max-w-6xl">
         <div className="mb-12 flex flex-col items-center gap-2 sm:flex-row sm:items-end sm:justify-between">
           <div className="text-center sm:text-left">
-            <p className="mb-3 font-mono text-sm text-accent">{'// 04 — work'}</p>
+            <p className="mb-3 font-mono text-sm text-accent">{'// work'}</p>
             <h2 className="text-3xl font-semibold tracking-tight text-ink">Featured Projects</h2>
           </div>
           <a
@@ -111,7 +112,7 @@ const Projects = () => {
             <ProjectCard key={project.title} project={project} />
           ))}
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 };

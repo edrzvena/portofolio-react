@@ -1,6 +1,7 @@
 import React from 'react';
 import { FiExternalLink } from 'react-icons/fi';
 import Card from '../components/ui/Card';
+import Reveal from '../components/ui/Reveal';
 
 const certificates = [
   {
@@ -20,8 +21,8 @@ const certificates = [
 const Certificates = () => {
   return (
     <section id="certificates" className="py-24 px-4 sm:px-8 lg:px-16">
-      <div className="mx-auto max-w-5xl">
-        <p className="mb-3 text-center font-mono text-sm text-accent">{'// 05 — credentials'}</p>
+      <Reveal className="mx-auto max-w-5xl">
+        <p className="mb-3 text-center font-mono text-sm text-accent">{'// credentials'}</p>
         <h2 className="mb-12 text-center text-3xl font-semibold tracking-tight text-ink">Certificates</h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {certificates.map(cert => (
@@ -41,7 +42,7 @@ const Certificates = () => {
             </Card>
           ))}
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 };

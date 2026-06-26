@@ -1,4 +1,5 @@
 import React from 'react';
+import Reveal from '../components/ui/Reveal';
 
 const education = [
   {
@@ -18,7 +19,8 @@ const education = [
 const Education = () => {
   return (
     <section id="education" className="bg-band py-24 px-4 sm:px-8 lg:px-16">
-      <div className="mx-auto max-w-4xl">
+      <Reveal className="mx-auto max-w-4xl">
+        <p className="mb-3 text-center font-mono text-sm text-accent">{'// education'}</p>
         <h2 className="mb-12 text-center text-3xl font-semibold tracking-tight text-ink">Education</h2>
 
         <div className="relative ml-2 border-l border-line pl-8 sm:ml-4">
@@ -37,7 +39,7 @@ const Education = () => {
             ))}
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 };

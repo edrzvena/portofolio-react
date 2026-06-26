@@ -37,7 +37,7 @@ const Hero = ({ scrollToSection }) => {
             </div>
           </div>
 
-          <p className="mb-3 font-mono text-sm text-accent">{'// Web Developer'}</p>
+          <p className="mb-3 font-mono text-sm text-accent">{'// web developer'}</p>
 
           <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-ink sm:text-5xl md:text-6xl">
             Hi, I'm <span className="text-accent">Pedro Widya</span>
