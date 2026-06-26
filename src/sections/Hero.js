@@ -18,23 +18,32 @@ const Hero = ({ scrollToSection }) => {
 
         {/* Text */}
         <div className="text-center lg:text-left">
-          {/* Avatar */}
-          <img
-            src={profile}
-            alt="Pedro Widya"
-            className="mx-auto mb-5 h-28 w-28 rounded-full border border-line object-cover shadow-air sm:h-32 sm:w-32 lg:mx-0"
-          />
+          {/* Avatar + speech bubble (gaya komik) */}
+          <div className="mb-6 flex flex-col items-center gap-4 lg:flex-row lg:items-center lg:justify-start">
+            <img
+              src={profile}
+              alt="Pedro Widya"
+              className="h-44 w-44 shrink-0 rounded-full border border-line object-cover shadow-air sm:h-56 sm:w-56"
+            />
+            <div className="relative max-w-xs rounded-2xl border-2 border-ink bg-white px-5 pb-4 pt-5 text-left shadow-[5px_5px_0_0_#111827]">
+              {/* tail: nunjuk ke atas (mobile) / ke kiri (desktop) */}
+              <span className="absolute left-1/2 top-0 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 rotate-45 border-l-2 border-t-2 border-ink bg-white lg:left-0 lg:top-1/2 lg:border-t-0 lg:border-b-2"></span>
+              {/* tanda kutip dekoratif */}
+              <span aria-hidden="true" className="pointer-events-none absolute -top-5 left-3 font-display text-6xl leading-none text-accent">&ldquo;</span>
+              <p className="relative text-base font-semibold leading-snug text-ink sm:text-lg">
+                Talk is cheap. Show me the code.
+              </p>
+              <p className="relative mt-2 font-mono text-xs text-muted">— Linus Torvalds</p>
+            </div>
+          </div>
+
           <p className="mb-3 font-mono text-sm text-accent">{'// Web Developer'}</p>
 
           <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-ink sm:text-5xl md:text-6xl">
             Hi, I'm <span className="text-accent">Pedro Widya</span>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-xl text-lg text-muted lg:mx-0">
-            "Talk is cheap. Show me the code." — Linus Torvalds
-          </p>
-
-          <p className="mt-4 font-mono text-sm text-muted">
+          <p className="mt-5 font-mono text-sm text-muted">
             JavaScript <span className="text-line-strong">/</span> TypeScript <span className="text-line-strong">/</span> React <span className="text-line-strong">/</span> Express <span className="text-line-strong">/</span> Tailwind <span className="text-line-strong">/</span> PostgreSQL
           </p>
 
