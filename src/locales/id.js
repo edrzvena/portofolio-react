@@ -16,6 +16,7 @@ const id = {
     quoteAuthor: '— Linus Torvalds',
     role: '// Web Developer',
     greeting: 'Hai, saya',
+    greetingSuffix: '',
     viewProjects: 'Lihat Proyek',
     downloadCV: 'Unduh CV',
     stats: ['Proyek', 'Sertifikat', 'Teknologi'],

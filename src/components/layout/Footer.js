@@ -13,7 +13,7 @@ const Footer = () => {
     <footer className="border-t border-line bg-white px-4 py-10 sm:px-8 lg:px-16">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-          <span className="font-mono text-sm font-semibold text-ink">{'</> Pedro'}</span>
+          <span className="font-mono text-sm font-semibold text-ink">{'</> Pedro Widya'}</span>
           <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             {links.map((link) => (
               <a

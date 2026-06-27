@@ -39,7 +39,7 @@ const Hero = ({ scrollToSection }) => {
           <p className="mb-3 font-mono text-sm text-accent">{t.hero.role}</p>
 
           <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-ink sm:text-5xl md:text-6xl">
-            {t.hero.greeting} <span className="text-accent">Pedro Widya</span>
+            {t.hero.greeting} <span className="text-accent">Pedro Widya</span>{t.hero.greetingSuffix}
           </h1>
 
           <p className="mt-5 font-mono text-sm text-muted">

@@ -1,18 +1,19 @@
 import React from 'react';
-import { FiGlobe, FiMenu, FiX } from 'react-icons/fi';
+import { FiMenu, FiX } from 'react-icons/fi';
 import { SECTION_IDS } from '../../constants/sections';
 import { useLanguage } from '../../context/LanguageContext';
+import LanguageSwitcher from '../ui/LanguageSwitcher';
 
 // Header full-width sticky bergaya glassmorphism terang (backdrop blur, putih 80%,
 // border bawah tipis) — sesuai DESIGN.md & mockup.
 // - Kiri: logo/nama (font mono)
 // - Tengah: nav links (font mono) — active dikasih warna aksen + underline biru
-// - Kanan: toggle bahasa (pill biru, icon globe + label bahasa aktif: EN/ID)
+// - Kanan: pemilih bahasa (LanguageSwitcher — globe + kode bahasa aktif, dropdown EN/ID/JP)
 // Di bawah lg jadi hamburger menu (panel dropdown di bawah header).
 // Catatan: id section tetap bahasa Inggris lowercase (skills, experience, …) karena dipakai
 // sebagai id elemen & target scroll; label tampilannya diambil dari t.nav[id].
 const Navbar = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen }) => {
-  const { language, toggleLanguage, t } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-white/80 backdrop-blur-md">
@@ -22,7 +23,7 @@ const Navbar = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen }) =
           onClick={() => scrollToSection('home')}
           className="shrink-0 font-mono text-sm font-semibold tracking-tight text-ink"
         >
-          {'</> Pedro'}
+          {'</> Pedro Widya'}
         </button>
 
         {/* Tengah: nav links (desktop) */}
@@ -48,16 +49,9 @@ const Navbar = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen }) =
           })}
         </nav>
 
-        {/* Kanan: toggle bahasa + hamburger */}
+        {/* Kanan: pemilih bahasa + hamburger */}
         <div className="flex shrink-0 items-center gap-2">
-          <button
-            onClick={toggleLanguage}
-            aria-label={`Switch language (current: ${language.toUpperCase()})`}
-            className="inline-flex items-center gap-1.5 font-mono text-xs text-muted transition-colors duration-200 hover:text-ink"
-          >
-            <FiGlobe className="h-3.5 w-3.5" />
-            {language.toUpperCase()}
-          </button>
+          <LanguageSwitcher />
 
           {/* Hamburger (mobile) */}
           <button
