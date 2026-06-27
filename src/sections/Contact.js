@@ -38,7 +38,7 @@ const Contact = () => {
   const inputClass = "w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink placeholder:text-muted transition-all duration-200 focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/10 sm:text-base";
 
   return (
-    <section id="contact" className="bg-band py-24 px-4 sm:px-8 lg:px-16">
+    <section id="contact" className="py-24 px-4 sm:px-8 lg:px-16">
       <Reveal className="mx-auto max-w-5xl text-center">
         <h2 className="mb-4 text-3xl font-semibold tracking-tight text-ink">
           {t.contact.heading}
