@@ -53,7 +53,7 @@ const Navbar = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen }) =
           <button
             onClick={toggleLanguage}
             aria-label={`Switch language (current: ${language.toUpperCase()})`}
-            className="inline-flex items-center gap-1 rounded-full bg-accent px-3 py-1.5 font-mono text-xs font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
+            className="inline-flex items-center gap-1.5 font-mono text-xs text-muted transition-colors duration-200 hover:text-ink"
           >
             <FiGlobe className="h-3.5 w-3.5" />
             {language.toUpperCase()}
