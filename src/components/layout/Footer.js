@@ -1,12 +1,10 @@
 import React from 'react';
-import resumeFile from '../../assets/files/PEDRO WIDYADHARTA CIADY.pdf';
 import { useLanguage } from '../../context/LanguageContext';
 
 const links = [
   { name: 'GitHub', href: 'https://github.com/edrzvena' },
   { name: 'LinkedIn', href: 'https://www.linkedin.com/in/pedro-widyadharta-ciady-773209350' },
   { name: 'Email', href: 'mailto:widyadharta@gmail.com' },
-  { name: 'Resume', href: resumeFile },
 ];
 
 const Footer = () => {

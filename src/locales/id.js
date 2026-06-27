@@ -22,8 +22,8 @@ const id = {
   },
 
   skills: {
-    heading: 'Tech Stack',
-    toolsHeading: 'Tools & Lainnya',
+    heading: 'Teknologi',
+    toolsHeading: 'Alat-alat & Lainnya',
     tools: ['GitHub', 'REST API', 'Pengembangan Berbantuan AI (Claude)'],
   },
 
