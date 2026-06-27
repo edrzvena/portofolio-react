@@ -4,14 +4,13 @@ import Button from '../components/ui/Button';
 import CodeCard from '../components/ui/CodeCard';
 import profile from '../assets/images/myself_casual.jpg';
 import resumeFile from '../assets/files/PEDRO WIDYADHARTA CIADY.pdf';
+import { useLanguage } from '../context/LanguageContext';
 
-const stats = [
-  { value: '5+', label: 'Projects' },
-  { value: '2', label: 'Certifications' },
-  { value: '12', label: 'Technologies' },
-];
+// Value statistik tetap (non-teks); label-nya diterjemahkan via t.hero.stats (urutan harus sama).
+const statValues = ['5+', '2', '12'];
 
 const Hero = ({ scrollToSection }) => {
+  const { t } = useLanguage();
   return (
     <section id="home" className="relative flex min-h-screen items-center px-4 pt-28 pb-16 sm:px-8 lg:px-16">
       <div className="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-2">
@@ -31,16 +30,16 @@ const Hero = ({ scrollToSection }) => {
               {/* tanda kutip dekoratif */}
               <span aria-hidden="true" className="pointer-events-none absolute -top-5 left-3 font-display text-6xl leading-none text-accent">&ldquo;</span>
               <p className="relative text-base font-semibold leading-snug text-ink sm:text-lg">
-                Talk is cheap. Show me the code.
+                {t.hero.quote}
               </p>
-              <p className="relative mt-2 font-mono text-xs text-muted">— Linus Torvalds</p>
+              <p className="relative mt-2 font-mono text-xs text-muted">{t.hero.quoteAuthor}</p>
             </div>
           </div>
 
-          <p className="mb-3 font-mono text-sm text-accent">{'// web developer'}</p>
+          <p className="mb-3 font-mono text-sm text-accent">{t.hero.role}</p>
 
           <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-ink sm:text-5xl md:text-6xl">
-            Hi, I'm <span className="text-accent">Pedro Widya</span>
+            {t.hero.greeting} <span className="text-accent">Pedro Widya</span>
           </h1>
 
           <p className="mt-5 font-mono text-sm text-muted">
@@ -49,20 +48,20 @@ const Hero = ({ scrollToSection }) => {
 
           <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
             <Button onClick={() => scrollToSection('projects')} className="px-6 py-3">
-              View Projects
+              {t.hero.viewProjects}
             </Button>
             <Button as="a" href={resumeFile} target="_blank" rel="noopener noreferrer" variant="secondary" className="px-6 py-3">
-              <span>Download CV</span>
+              <span>{t.hero.downloadCV}</span>
               <FiDownload className="h-4 w-4" />
             </Button>
           </div>
 
           {/* Honest stats */}
           <div className="mt-10 flex justify-center gap-8 lg:justify-start">
-            {stats.map((s) => (
-              <div key={s.label} className="text-center lg:text-left">
-                <div className="font-display text-2xl font-bold text-ink">{s.value}</div>
-                <div className="font-mono text-xs uppercase tracking-wider text-muted">{s.label}</div>
+            {statValues.map((value, i) => (
+              <div key={t.hero.stats[i]} className="text-center lg:text-left">
+                <div className="font-display text-2xl font-bold text-ink">{value}</div>
+                <div className="font-mono text-xs uppercase tracking-wider text-muted">{t.hero.stats[i]}</div>
               </div>
             ))}
           </div>

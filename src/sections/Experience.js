@@ -1,52 +1,38 @@
 import React from 'react';
 import Reveal from '../components/ui/Reveal';
+import { useLanguage } from '../context/LanguageContext';
 
-const experiences = [
-  {
-    title: "Marketing Support",
-    company: "PT. GFC Terpadu",
-    date: "Nov 2022 - present",
-    tasks: [
-      "Menyusun dan memonitor KPI toko sebagai instrumen evaluasi performa operasional cabang, serta menyampaikan laporan hasil penilaian kepada manajemen secara berkala.",
-      "Melaksanakan penilaian standar visual merchandising dan kualitas pelayanan toko melalui pemantauan rekaman CCTV sesuai standar operasional perusahaan.",
-      "Mengelola proses pengadaan peralatan CCTV mulai dari koordinasi pembelian, verifikasi invoice, hingga dokumentasi administrasi untuk kebutuhan toko.",
-      "Mendukung pelaksanaan kampanye pemasaran melalui pengelolaan dan distribusi materi promosi (TVC, media digital, dan materi cetak) agar strategi pemasaran berjalan tepat sasaran.",
-      "Berkoordinasi lintas fungsi antara tim Marketing dan Supervisor toko dalam proses penilaian, pelaporan performa, serta tindak lanjut hasil evaluasi cabang."
-    ]
-  },
-  {
-    title: "Administrasi",
-    company: "PT. Usaha Inti Bersama",
-    date: "Nov 2020 - Mar 2022",
-    tasks: [
-      "Mengelola operasional toko online, mencakup manajemen produk, pemrosesan pesanan, dan pemantauan performa penjualan untuk memastikan kelancaran transaksi digital.",
-      "Menyusun dan menginput laporan penjualan harian secara akurat, termasuk pencatatan arus kas masuk dan kas keluar sebagai bahan evaluasi keuangan operasional.",
-      "Mengelola pencatatan kas kecil dan kas besar secara tertib dan terdokumentasi untuk mendukung transparansi dan akuntabilitas keuangan toko."
-    ]
-  }
+// Data non-teks (perusahaan, tanggal) tetap di sini; title & tasks diterjemahkan via
+// t.experience.items (urutan harus sama dengan array ini).
+const experienceMeta = [
+  { company: 'PT. GFC Terpadu', date: 'Nov 2022 - present' },
+  { company: 'PT. Usaha Inti Bersama', date: 'Nov 2020 - Mar 2022' },
 ];
 
 const Experience = () => {
+  const { t } = useLanguage();
   return (
     <section id="experience" className="py-24 px-4 sm:px-8 lg:px-16">
       <Reveal className="mx-auto max-w-4xl">
-        <p className="mb-3 text-center font-mono text-sm text-accent">{'// experience'}</p>
-        <h2 className="mb-12 text-center text-3xl font-semibold tracking-tight text-ink">Experience</h2>
+        <h2 className="mb-12 text-center text-3xl font-semibold tracking-tight text-ink">{t.experience.heading}</h2>
 
         <div className="relative ml-2 border-l border-line pl-8 sm:ml-4">
           <div className="flex flex-col gap-10">
-            {experiences.map(exp => (
-              <div key={exp.title} className="relative">
-                {/* node dot */}
-                <span className="absolute -left-[42px] top-1.5 h-3 w-3 rounded-full border-2 border-white bg-accent ring-1 ring-line sm:-left-[42px]"></span>
-                <p className="mb-1 font-mono text-sm text-muted">{exp.date}</p>
-                <h3 className="text-xl font-semibold text-ink">{exp.title}</h3>
-                <p className="mb-3 text-muted">{exp.company}</p>
-                <ul className="ml-5 list-disc space-y-2 text-muted">
-                  {exp.tasks.map(task => <li key={task}>{task}</li>)}
-                </ul>
-              </div>
-            ))}
+            {experienceMeta.map((meta, i) => {
+              const exp = t.experience.items[i];
+              return (
+                <div key={meta.company} className="relative">
+                  {/* node dot */}
+                  <span className="absolute -left-[42px] top-1.5 h-3 w-3 rounded-full border-2 border-white bg-accent ring-1 ring-line sm:-left-[42px]"></span>
+                  <p className="mb-1 font-mono text-sm text-muted">{meta.date}</p>
+                  <h3 className="text-xl font-semibold text-ink">{exp.title}</h3>
+                  <p className="mb-3 text-muted">{meta.company}</p>
+                  <ul className="ml-5 list-disc space-y-2 text-muted">
+                    {exp.tasks.map(task => <li key={task}>{task}</li>)}
+                  </ul>
+                </div>
+              );
+            })}
           </div>
         </div>
       </Reveal>

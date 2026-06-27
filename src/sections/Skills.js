@@ -1,6 +1,6 @@
 import React from 'react';
 import { SiJavascript, SiTypescript, SiPython, SiReact, SiNodedotjs, SiExpress, SiPostgresql, SiSupabase, SiTailwindcss, SiVercel, SiGit, SiBruno } from 'react-icons/si';
-import Reveal from '../components/ui/Reveal';
+import { useLanguage } from '../context/LanguageContext';
 
 const skills = [
   { title: 'JavaScript', Icon: SiJavascript },
@@ -15,21 +15,16 @@ const skills = [
   { title: 'Vercel', Icon: SiVercel },
   { title: 'Git', Icon: SiGit },
   { title: 'Bruno API', Icon: SiBruno },
-];
-
-const tools = ['GitHub', 'REST API', 'VS Code', 'AI-Assisted Development (Claude)'];
+]
 
 const Skills = () => {
+  const { t } = useLanguage();
   return (
     <section id="skills" className="py-24 px-4 sm:px-8 lg:px-16">
-      <Reveal className="mx-auto max-w-6xl">
-        <p className="mb-3 text-center font-mono text-sm text-accent">{'// stack'}</p>
+      <div className="mx-auto max-w-6xl">
         <h2 className="mb-3 text-center text-3xl font-semibold tracking-tight text-ink">
-          Core Technology Stack
+          {t.skills.heading}
         </h2>
-        <p className="mx-auto mb-12 max-w-2xl text-center text-muted">
-          Tools &amp; framework yang gw pakai untuk membangun web modern.
-        </p>
 
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {skills.map(({ title, Icon }) => (
@@ -46,11 +41,11 @@ const Skills = () => {
         {/* Tools & Others */}
         <div className="mt-12 rounded-xl border border-line bg-surface p-6">
           <h3 className="mb-6 text-center text-lg font-semibold text-ink">
-            Tools &amp; Others
+            {t.skills.toolsHeading}
           </h3>
 
           <div className="flex flex-wrap justify-center gap-3">
-            {tools.map((tech) => (
+            {t.skills.tools.map((tech) => (
               <span
                 key={tech}
                 className="rounded-lg border border-line bg-white px-4 py-2 font-mono text-xs text-muted transition-colors duration-200 hover:border-line-strong hover:text-ink sm:text-sm"
@@ -60,7 +55,7 @@ const Skills = () => {
             ))}
           </div>
         </div>
-      </Reveal>
+      </div>
     </section>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import resumeFile from '../../assets/files/PEDRO WIDYADHARTA CIADY.pdf';
+import { useLanguage } from '../../context/LanguageContext';
 
 const links = [
   { name: 'GitHub', href: 'https://github.com/edrzvena' },
@@ -9,6 +10,7 @@ const links = [
 ];
 
 const Footer = () => {
+  const { t } = useLanguage();
   return (
     <footer className="border-t border-line bg-white px-4 py-10 sm:px-8 lg:px-16">
       <div className="mx-auto max-w-6xl">
@@ -29,7 +31,7 @@ const Footer = () => {
           </nav>
         </div>
         <p className="mt-8 text-center text-sm text-muted sm:text-left">
-          © Pedro Widya. All rights reserved.
+          {t.footer.rights}
         </p>
       </div>
     </footer>
