@@ -16,6 +16,7 @@ const ja = {
     quoteAuthor: '— リーナス・トーバルズ',
     role: '// Web Developer',
     greeting: 'こんにちは、私は',
+    name: 'ペドロ・ウィディア',
     greetingSuffix: ' です',
     viewProjects: 'プロジェクトを見る',
     downloadCV: 'CVをダウンロード',
@@ -141,7 +142,7 @@ const ja = {
   },
 
   footer: {
-    rights: '© Pedro Widya. 全著作権所有。',
+    rights: '© ペドロ・ウィディア. 全著作権所有。',
   },
 };
 

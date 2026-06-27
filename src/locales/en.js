@@ -16,6 +16,7 @@ const en = {
     quoteAuthor: '— Linus Torvalds',
     role: '// Web Developer',
     greeting: "Hi, I'm",
+    name: 'Pedro Widya',
     greetingSuffix: '',
     viewProjects: 'View Projects',
     downloadCV: 'Download CV',

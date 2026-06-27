@@ -12,10 +12,11 @@ const id = {
   },
 
   hero: {
-    quote: 'Talk is cheap. Show me the code.',
+    quote: 'Omong kosong itu mudah. ​​Tunjukkan kodenya.',
     quoteAuthor: '— Linus Torvalds',
     role: '// Web Developer',
     greeting: 'Hai, saya',
+    name: 'Pedro Widya',
     greetingSuffix: '',
     viewProjects: 'Lihat Proyek',
     downloadCV: 'Unduh CV',
