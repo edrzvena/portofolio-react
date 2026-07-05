@@ -14,7 +14,7 @@ const en = {
   hero: {
     quote: 'Talk is cheap. Show me the code.',
     quoteAuthor: '— Linus Torvalds',
-    role: '// Web Developer',
+    role: '# Web Developer',
     greeting: "Hi, I'm",
     name: 'Pedro Widya',
     greetingSuffix: '',
