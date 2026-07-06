@@ -23,7 +23,7 @@ const Education = () => {
               return (
                 <div key={edu.title} className="relative">
                   {/* node dot */}
-                  <span className="absolute -left-[42px] top-1.5 h-3 w-3 rounded-full border-2 border-white bg-accent ring-1 ring-line"></span>
+                  <span className="absolute -left-[42px] top-1.5 h-3 w-3 rounded-full border-2 border-page bg-accent ring-1 ring-line"></span>
                   <p className="mb-1 font-mono text-sm text-muted">{meta.date}</p>
                   <h3 className="text-xl font-semibold text-ink">{edu.title}</h3>
                   <p className="mb-3 text-muted">{edu.institution}</p>

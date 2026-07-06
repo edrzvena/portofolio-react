@@ -53,7 +53,7 @@ const LanguageSwitcher = () => {
       {open && (
         <ul
           role="listbox"
-          className="absolute right-0 z-50 mt-2 w-36 overflow-hidden rounded-xl border border-line bg-white py-1 shadow-air"
+          className="absolute right-0 z-50 mt-2 w-36 overflow-hidden rounded-xl border border-line bg-card py-1 shadow-air"
         >
           {LANGUAGES.map((lang) => {
             const isActive = lang.code === language;

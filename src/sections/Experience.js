@@ -23,7 +23,7 @@ const Experience = () => {
               return (
                 <div key={meta.company} className="relative">
                   {/* node dot */}
-                  <span className="absolute -left-[42px] top-1.5 h-3 w-3 rounded-full border-2 border-white bg-accent ring-1 ring-line sm:-left-[42px]"></span>
+                  <span className="absolute -left-[42px] top-1.5 h-3 w-3 rounded-full border-2 border-page bg-accent ring-1 ring-line sm:-left-[42px]"></span>
                   <p className="mb-1 font-mono text-sm text-muted">{meta.date}</p>
                   <h3 className="text-xl font-semibold text-ink">{exp.title}</h3>
                   <p className="mb-3 text-muted">{meta.company}</p>

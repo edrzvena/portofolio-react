@@ -17,7 +17,7 @@ const Navbar = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen }) =
   const { t } = useLanguage();
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-white/80 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-page/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-8 lg:px-16">
         {/* Kiri: logo / nama */}
         <button
@@ -68,7 +68,7 @@ const Navbar = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen }) =
 
       {/* Mobile dropdown menu */}
       {isMenuOpen && (
-        <div className="border-b border-line bg-white/95 px-4 py-3 backdrop-blur-md sm:px-8 lg:hidden">
+        <div className="border-b border-line bg-page/95 px-4 py-3 backdrop-blur-md sm:px-8 lg:hidden">
           <div className="flex flex-col gap-1">
             {SECTION_IDS.map((sectionId) => {
               const isActive = activeSection === sectionId;

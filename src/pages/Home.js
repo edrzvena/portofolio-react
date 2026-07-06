@@ -19,7 +19,7 @@ const Home = () => {
   } = useScrollEffects();
 
   return (
-    <div className="min-h-screen bg-white text-ink font-sans overflow-x-hidden">
+    <div className="min-h-screen bg-page text-ink font-sans overflow-x-hidden">
       <Navbar
         activeSection={activeSection}
         scrollToSection={scrollToSection}

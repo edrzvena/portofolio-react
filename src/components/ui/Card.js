@@ -6,7 +6,7 @@ import React from 'react';
 const Card = ({ children, className = '' }) => {
   return (
     <div
-      className={`bg-white border border-line rounded-xl p-6 transition-all duration-300 hover:border-line-strong hover:shadow-air ${className}`}
+      className={`bg-card border border-line rounded-xl p-6 transition-all duration-300 hover:border-line-strong hover:shadow-air ${className}`}
     >
       {children}
     </div>

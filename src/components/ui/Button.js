@@ -7,7 +7,7 @@ import React from 'react';
 // mis. <Button as="a" href="..."> untuk link. Padding/lebar diteruskan lewat `className`.
 const VARIANTS = {
   primary: 'bg-accent text-white hover:bg-accent-hover',
-  secondary: 'bg-white text-ink border border-line hover:bg-surface hover:border-line-strong',
+  secondary: 'bg-card text-ink border border-line hover:bg-surface hover:border-line-strong',
 };
 
 const Button = ({ as: Component = 'button', variant = 'primary', className = '', children, ...props }) => {
