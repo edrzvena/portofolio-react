@@ -1,20 +1,33 @@
 import React from 'react';
-import { SiJavascript, SiTypescript, SiPython, SiReact, SiNodedotjs, SiExpress, SiPostgresql, SiSupabase, SiTailwindcss, SiVercel, SiGit, SiBruno } from 'react-icons/si';
+import { SiJavascript, SiTypescript, SiPython, SiGo, SiGin, SiReact, SiDjango, SiNodedotjs, SiExpress, SiPostgresql, SiSupabase, SiTailwindcss, SiVercel, SiGit, SiBruno, SiDocker } from 'react-icons/si';
 import { useLanguage } from '../context/LanguageContext';
 
 const skills = [
+  // Languages
   { title: 'JavaScript', Icon: SiJavascript },
   { title: 'TypeScript', Icon: SiTypescript },
   { title: 'Python', Icon: SiPython },
-  { title: 'React', Icon: SiReact },
+  { title: 'Go', Icon: SiGo },
+
+  // Backend frameworks
   { title: 'Node.js', Icon: SiNodedotjs },
   { title: 'Express', Icon: SiExpress },
+  { title: 'Django', Icon: SiDjango },
+  { title: 'Gin', Icon: SiGin },
+
+  // Frontend
+  { title: 'React', Icon: SiReact },
+  { title: 'Tailwind CSS', Icon: SiTailwindcss },
+
+  // Database
   { title: 'PostgreSQL', Icon: SiPostgresql },
   { title: 'Supabase', Icon: SiSupabase },
-  { title: 'Tailwind CSS', Icon: SiTailwindcss },
-  { title: 'Vercel', Icon: SiVercel },
+
+  // Tools & Deployment
   { title: 'Git', Icon: SiGit },
+  { title: 'Vercel', Icon: SiVercel },
   { title: 'Bruno API', Icon: SiBruno },
+  { title: 'Docker', Icon: SiDocker }
 ]
 
 const Skills = () => {
