@@ -6,6 +6,18 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#ffffff" />
+    <!-- Terapkan tema sedini mungkin (sebelum paint) untuk cegah flash tema salah. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var isDark = stored
+            ? stored === 'dark'
+            : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (isDark) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
     <meta name="description" content="Pedro Widya - Web Developer" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
