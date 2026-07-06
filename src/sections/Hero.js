@@ -24,9 +24,9 @@ const Hero = ({ scrollToSection }) => {
               alt="Pedro Widya"
               className="h-44 w-44 shrink-0 rounded-full border border-line object-cover shadow-air sm:h-56 sm:w-56"
             />
-            <div className="relative max-w-xs rounded-2xl border-2 border-ink bg-white px-5 pb-4 pt-5 text-left shadow-[5px_5px_0_0_#111827]">
+            <div className="relative max-w-xs rounded-2xl border-2 border-ink bg-card px-5 pb-4 pt-5 text-left shadow-[5px_5px_0_0_rgb(var(--color-ink))]">
               {/* tail: nunjuk ke atas (mobile) / ke kiri (desktop) */}
-              <span className="absolute left-1/2 top-0 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 rotate-45 border-l-2 border-t-2 border-ink bg-white lg:left-0 lg:top-1/2 lg:border-t-0 lg:border-b-2"></span>
+              <span className="absolute left-1/2 top-0 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 rotate-45 border-l-2 border-t-2 border-ink bg-card lg:left-0 lg:top-1/2 lg:border-t-0 lg:border-b-2"></span>
               {/* tanda kutip dekoratif */}
               <span aria-hidden="true" className="pointer-events-none absolute -top-5 left-3 font-display text-6xl leading-none text-accent">&ldquo;</span>
               <p className="relative text-base font-semibold leading-snug text-ink sm:text-lg">
