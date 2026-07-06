@@ -10,7 +10,8 @@ const getInitialTheme = () => {
   try {
     const stored = localStorage.getItem('theme');
     if (stored === 'dark' || stored === 'light') return stored;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    // Default: selalu light mode saat web pertama dibuka (belum ada pilihan tersimpan).
+    return 'light';
   } catch (e) {
     return 'light';
   }
