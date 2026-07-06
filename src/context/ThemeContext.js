@@ -22,6 +22,11 @@ export const ThemeProvider = ({ children }) => {
   useEffect(() => {
     const root = document.documentElement;
     root.classList.toggle('dark', theme === 'dark');
+
+    // Sinkron warna chrome browser mobile dengan warna latar halaman.
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', theme === 'dark' ? '#0b1120' : '#ffffff');
+
     try {
       localStorage.setItem('theme', theme);
     } catch (e) {
