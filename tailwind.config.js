@@ -1,20 +1,26 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
+      // Warna semantik dipetakan ke CSS variable (channel RGB) supaya bisa di-flip
+      // otomatis oleh class `.dark` di <html> — lihat definisinya di src/index.css.
+      // Format rgb(var(--x) / <alpha-value>) menjaga dukungan opacity util (mis. bg-page/80).
       colors: {
-        ink: '#111827',
-        muted: '#64748B',
-        accent: '#2563EB',
-        'accent-hover': '#1d4ed8',
-        surface: '#F8F9FA',
-        band: '#f1f3ff',
-        code: '#1e293b',
-        line: '#E5E7EB',
-        'line-strong': '#D1D5DB',
+        ink: 'rgb(var(--color-ink) / <alpha-value>)',
+        muted: 'rgb(var(--color-muted) / <alpha-value>)',
+        accent: 'rgb(var(--color-accent) / <alpha-value>)',
+        'accent-hover': 'rgb(var(--color-accent-hover) / <alpha-value>)',
+        surface: 'rgb(var(--color-surface) / <alpha-value>)',
+        band: 'rgb(var(--color-band) / <alpha-value>)',
+        code: 'rgb(var(--color-code) / <alpha-value>)',
+        line: 'rgb(var(--color-line) / <alpha-value>)',
+        'line-strong': 'rgb(var(--color-line-strong) / <alpha-value>)',
+        page: 'rgb(var(--color-page) / <alpha-value>)',
+        card: 'rgb(var(--color-card) / <alpha-value>)',
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
