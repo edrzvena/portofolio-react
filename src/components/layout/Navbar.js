@@ -3,6 +3,7 @@ import { FiMenu, FiX } from 'react-icons/fi';
 import { SECTION_IDS } from '../../constants/sections';
 import { useLanguage } from '../../context/LanguageContext';
 import LanguageSwitcher from '../ui/LanguageSwitcher';
+import ThemeToggle from '../ui/ThemeToggle';
 
 // Header full-width sticky bergaya glassmorphism terang (backdrop blur, putih 80%,
 // border bawah tipis) — sesuai DESIGN.md & mockup.
@@ -51,6 +52,7 @@ const Navbar = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen }) =
 
         {/* Kanan: pemilih bahasa + hamburger */}
         <div className="flex shrink-0 items-center gap-2">
+          <ThemeToggle />
           <LanguageSwitcher />
 
           {/* Hamburger (mobile) */}
