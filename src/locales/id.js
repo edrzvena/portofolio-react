@@ -142,7 +142,7 @@ const id = {
   },
 
   footer: {
-    rights: '© Pedro Widya. Hak cipta dilindungi.',
+    rights: '© 2026 Pedro Widya. Hak cipta dilindungi.',
   },
 };
 
