@@ -142,7 +142,7 @@ const en = {
   },
 
   footer: {
-    rights: '© Pedro Widya. All rights reserved.',
+    rights: '© 2026 Pedro Widya. All rights reserved.',
   },
 };
 
