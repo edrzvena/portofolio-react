@@ -137,7 +137,7 @@ const en = {
     messagePh: 'Your Message',
     send: 'Send Message',
     sending: 'Sending…',
-    success: "Message sent, thanks! I'll get back to you ASAP.",
+    success: "Message sent, thanks! I'll get back to you.",
     error: 'Failed to send. Please try again, or email me directly at widyadharta@gmail.com.',
   },
 
