@@ -37,7 +37,7 @@ const en = {
         tasks: [
           'Compiled and monitored store KPIs as an instrument for evaluating branch operational performance, and reported assessment results to management on a regular basis.',
           'Conducted assessments of visual merchandising standards and store service quality by reviewing CCTV footage in accordance with company operating standards.',
-          'Managed the CCTV equipment procurement process — from purchase coordination and invoice verification to administrative documentation for store needs.',
+          'Managed the CCTV equipment procurement process from purchase coordination and invoice verification to administrative documentation for store needs.',
           'Supported marketing campaign execution through the management and distribution of promotional materials (TVC, digital media, and print) so marketing strategies hit their target.',
           'Coordinated cross-functionally between the Marketing team and store Supervisors in assessment, performance reporting, and follow-up of branch evaluation results.',
         ],
