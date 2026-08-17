@@ -1,5 +1,6 @@
 import React from 'react';
 import { SiJavascript, SiTypescript, SiPython, SiSharp, SiDotnet, SiReact, SiDjango, SiNodedotjs, SiExpress, SiPostgresql, SiSupabase, SiTailwindcss, SiVercel, SiGit, SiBruno, SiDocker } from 'react-icons/si';
+import { DiMsqlServer } from 'react-icons/di';
 import { useLanguage } from '../context/LanguageContext';
 
 const skills = [
@@ -21,6 +22,7 @@ const skills = [
 
   // Database
   { title: 'PostgreSQL', Icon: SiPostgresql },
+  { title: 'SQL Server Express', Icon: DiMsqlServer },
   { title: 'Supabase', Icon: SiSupabase },
 
   // Tools & Deployment
