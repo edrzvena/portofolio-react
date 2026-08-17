@@ -1,5 +1,5 @@
 import React from 'react';
-import { SiJavascript, SiTypescript, SiPython, SiSharp, SiDotnet, SiReact, SiDjango, SiNodedotjs, SiExpress, SiPostgresql, SiSupabase, SiTailwindcss, SiVercel, SiGit, SiBruno, SiDocker } from 'react-icons/si';
+import { SiJavascript, SiTypescript, SiPython, SiSharp, SiDotnet, SiReact, SiDjango, SiNodedotjs, SiExpress, SiPostgresql, SiSupabase, SiTailwindcss, SiBootstrap, SiVercel, SiGit, SiBruno, SiDocker } from 'react-icons/si';
 import { DiMsqlServer } from 'react-icons/di';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -19,6 +19,7 @@ const skills = [
   // Frontend
   { title: 'React', Icon: SiReact },
   { title: 'Tailwind CSS', Icon: SiTailwindcss },
+  { title: 'Bootstrap', Icon: SiBootstrap },
 
   // Database
   { title: 'PostgreSQL', Icon: SiPostgresql },
