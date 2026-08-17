@@ -1,5 +1,5 @@
 import React from 'react';
-import { SiJavascript, SiTypescript, SiPython, SiGo, SiGin, SiReact, SiDjango, SiNodedotjs, SiExpress, SiPostgresql, SiSupabase, SiTailwindcss, SiVercel, SiGit, SiBruno, SiDocker } from 'react-icons/si';
+import { SiJavascript, SiTypescript, SiPython, SiSharp, SiDotnet, SiReact, SiDjango, SiNodedotjs, SiExpress, SiPostgresql, SiSupabase, SiTailwindcss, SiVercel, SiGit, SiBruno, SiDocker } from 'react-icons/si';
 import { useLanguage } from '../context/LanguageContext';
 
 const skills = [
