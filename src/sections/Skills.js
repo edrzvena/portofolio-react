@@ -7,13 +7,13 @@ const skills = [
   { title: 'JavaScript', Icon: SiJavascript },
   { title: 'TypeScript', Icon: SiTypescript },
   { title: 'Python', Icon: SiPython },
-  { title: 'Go', Icon: SiGo },
+  { title: 'C#', Icon: SiSharp },
 
   // Backend frameworks
   { title: 'Node.js', Icon: SiNodedotjs },
   { title: 'Express', Icon: SiExpress },
   { title: 'Django', Icon: SiDjango },
-  { title: 'Gin', Icon: SiGin },
+  { title: '.NET', Icon: SiDotnet },
 
   // Frontend
   { title: 'React', Icon: SiReact },
