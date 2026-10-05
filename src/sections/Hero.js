@@ -2,6 +2,7 @@ import React from 'react';
 import { FiDownload, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 import Button from '../components/ui/Button';
 import CodeCard from '../components/ui/CodeCard';
+import ConstSyntax from '../components/ui/ConstSyntax';
 import profile from '../assets/images/myself_casual.jpg';
 import resumeFile from '../assets/files/PEDRO WIDYADHARTA CIADY.pdf';
 import { useLanguage } from '../context/LanguageContext';
@@ -62,13 +63,9 @@ const Hero = ({ scrollToSection }) => {
             </div>
           </div>
 
-          {/* Role ditulis sebagai syntax JS: const role = '...'; */}
-          <p className="mb-3 font-mono text-sm">
-            <span className="text-violet-600 dark:text-violet-400">const</span>{' '}
-            <span className="text-accent">role</span>{' '}
-            <span className="text-muted">=</span>{' '}
-            <span className="text-emerald-700 dark:text-emerald-400">'{t.hero.role}'</span>
-            <span className="text-muted">;</span>
+          {/* Role ditulis sebagai syntax JS: const role = "..."; */}
+          <p className="mb-3 text-sm">
+            <ConstSyntax name="role" value={t.hero.role} />
           </p>
 
           <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-ink sm:text-5xl md:text-6xl">

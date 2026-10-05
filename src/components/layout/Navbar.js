@@ -4,10 +4,11 @@ import { SECTION_IDS } from '../../constants/sections';
 import { useLanguage } from '../../context/LanguageContext';
 import LanguageSwitcher from '../ui/LanguageSwitcher';
 import ThemeToggle from '../ui/ThemeToggle';
+import Logo from '../ui/Logo';
 
 // Header full-width sticky bergaya glassmorphism terang (backdrop blur, putih 80%,
 // border bawah tipis) — sesuai DESIGN.md & mockup.
-// - Kiri: logo/nama (font mono)
+// - Kiri: logo/nama sebagai syntax pemanggilan fungsi JS: pedroWidya()
 // - Tengah: nav links (font mono) — active dikasih warna aksen + underline biru
 // - Kanan: pemilih bahasa (LanguageSwitcher — globe + kode bahasa aktif, dropdown EN/ID/JP)
 // Di bawah lg jadi hamburger menu (panel dropdown di bawah header).
@@ -22,9 +23,10 @@ const Navbar = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen }) =
         {/* Kiri: logo / nama */}
         <button
           onClick={() => scrollToSection('home')}
-          className="shrink-0 font-mono text-sm font-semibold tracking-tight text-ink"
+          aria-label="Pedro Widya"
+          className="shrink-0 tracking-tight"
         >
-          {'</> Pedro Widya'}
+          <Logo />
         </button>
 
         {/* Tengah: nav links (desktop) */}

@@ -31,38 +31,38 @@ const CodeCard = () => {
           {'\n'}
           {'  '}<span className="text-slate-300">name</span>
           <span className="text-slate-400">:</span>{' '}
-          <span className="text-emerald-300">'Pedro Widya'</span>
+          <span className="text-emerald-300">"Pedro Widya"</span>
           <span className="text-slate-400">,</span>
           {'\n'}
           {'  '}<span className="text-slate-300">role</span>
           <span className="text-slate-400">:</span>{' '}
-          <span className="text-emerald-300">'Web Developer'</span>
+          <span className="text-emerald-300">"Web Developer"</span>
           <span className="text-slate-400">,</span>
           {'\n'}
           {'  '}<span className="text-slate-300">stack</span>
           <span className="text-slate-400">: [</span>
           {'\n'}
-          {'    '}<span className="text-emerald-300">'JavaScript'</span>
+          {'    '}<span className="text-emerald-300">"JavaScript"</span>
           <span className="text-slate-400">,</span>{' '}
-          <span className="text-emerald-300">'TypeScript'</span>
+          <span className="text-emerald-300">"TypeScript"</span>
           <span className="text-slate-400">,</span>{' '}
-          <span className="text-emerald-300">'C#'</span>
+          <span className="text-emerald-300">"C#"</span>
           <span className="text-slate-400">,</span>{' '}
-          <span className="text-emerald-300">'.NET'</span>
+          <span className="text-emerald-300">".NET"</span>
           <span className="text-slate-400">,</span>
           {'\n'}
-          {'    '}<span className="text-emerald-300">'React'</span>
+          {'    '}<span className="text-emerald-300">"React"</span>
           <span className="text-slate-400">,</span>{' '}
-          <span className="text-emerald-300">'Express'</span>
+          <span className="text-emerald-300">"Express"</span>
           <span className="text-slate-400">,</span>{' '}
-          <span className="text-emerald-300">'Tailwind'</span>
+          <span className="text-emerald-300">"Tailwind"</span>
           <span className="text-slate-400">,</span>{' '}
-          <span className="text-emerald-300">'Bootstrap'</span>
+          <span className="text-emerald-300">"Bootstrap"</span>
           <span className="text-slate-400">,</span>
           {'\n'}
-          {'    '}<span className="text-emerald-300">'PostgreSQL'</span>
+          {'    '}<span className="text-emerald-300">"PostgreSQL"</span>
           <span className="text-slate-400">,</span>{' '}
-          <span className="text-emerald-300">'SQL Server'</span>
+          <span className="text-emerald-300">"SQL Server"</span>
           <span className="text-slate-400">,</span>
           {'\n'}
           {'  '}<span className="text-slate-400">],</span>
