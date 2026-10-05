@@ -1,5 +1,5 @@
 import React from 'react';
-import { SiJavascript, SiTypescript, SiPython, SiSharp, SiDotnet, SiReact, SiDjango, SiNodedotjs, SiExpress, SiPostgresql, SiSupabase, SiTailwindcss, SiBootstrap, SiVercel, SiGit, SiBruno, SiDocker } from 'react-icons/si';
+import { SiJavascript, SiTypescript, SiPython, SiSharp, SiDotnet, SiReact, SiDjango, SiNodedotjs, SiExpress, SiPostgresql, SiSupabase, SiTailwindcss, SiBootstrap, SiVercel, SiGit, SiBruno, SiDocker, SiKubernetes, SiGrafana } from 'react-icons/si';
 import { DiMsqlServer } from 'react-icons/di';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -30,7 +30,9 @@ const skills = [
   { title: 'Git', Icon: SiGit },
   { title: 'Vercel', Icon: SiVercel },
   { title: 'Bruno API', Icon: SiBruno },
-  { title: 'Docker', Icon: SiDocker }
+  { title: 'Docker', Icon: SiDocker },
+  { title: 'Kubernetes', Icon: SiKubernetes },
+  { title: 'Grafana', Icon: SiGrafana }
 ]
 
 const Skills = () => {
