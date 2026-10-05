@@ -26,7 +26,6 @@ const en = {
   skills: {
     heading: 'Tech Stack',
     toolsHeading: 'Tools & Others',
-    tools: ['GitHub', 'REST API', 'AI-Assisted Development (Claude)'],
   },
 
   experience: {

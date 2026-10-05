@@ -26,7 +26,6 @@ const ja = {
   skills: {
     heading: '技術スタック',
     toolsHeading: 'ツール・その他',
-    tools: ['GitHub', 'REST API', 'AI支援開発（Claude）'],
   },
 
   experience: {

@@ -1,6 +1,7 @@
 import React from 'react';
-import { SiJavascript, SiTypescript, SiPython, SiSharp, SiDotnet, SiReact, SiDjango, SiNodedotjs, SiExpress, SiPostgresql, SiSupabase, SiTailwindcss, SiBootstrap, SiVercel, SiGit, SiBruno, SiDocker, SiKubernetes, SiGrafana } from 'react-icons/si';
+import { SiJavascript, SiTypescript, SiPython, SiSharp, SiDotnet, SiReact, SiDjango, SiNodedotjs, SiExpress, SiPostgresql, SiSupabase, SiTailwindcss, SiBootstrap, SiVercel, SiGit, SiBruno, SiDocker, SiKubernetes, SiGrafana, SiGithub, SiClaude, SiAmazonwebservices, SiPostman, SiDbeaver } from 'react-icons/si';
 import { DiMsqlServer } from 'react-icons/di';
+import { VscAzure } from 'react-icons/vsc';
 import { useLanguage } from '../context/LanguageContext';
 
 const skills = [
@@ -24,16 +25,35 @@ const skills = [
   // Database
   { title: 'PostgreSQL', Icon: SiPostgresql },
   { title: 'SQL Server Express', Icon: DiMsqlServer },
-  { title: 'Supabase', Icon: SiSupabase },
+  { title: 'Supabase', Icon: SiSupabase }
+]
 
-  // Tools & Deployment
+const tools = [
+  // Version control
   { title: 'Git', Icon: SiGit },
+  { title: 'GitHub', Icon: SiGithub },
+
+  // Deployment & infrastructure
   { title: 'Vercel', Icon: SiVercel },
-  { title: 'Bruno API', Icon: SiBruno },
+  { title: 'AWS', Icon: SiAmazonwebservices },
+  { title: 'Azure', Icon: VscAzure },
   { title: 'Docker', Icon: SiDocker },
   { title: 'Kubernetes', Icon: SiKubernetes },
-  { title: 'Grafana', Icon: SiGrafana }
+  { title: 'Grafana', Icon: SiGrafana },
+
+  // API & others
+  { title: 'Bruno API', Icon: SiBruno },
+  { title: 'Postman', Icon: SiPostman },
+  { title: 'DBeaver', Icon: SiDbeaver },
+  { title: 'Claude', Icon: SiClaude }
 ]
+
+const TechCard = ({ title, Icon }) => (
+  <div className="flex flex-col items-center gap-3 rounded-xl border border-line bg-card p-5 text-center transition-all duration-300 hover:border-line-strong hover:shadow-air">
+    <Icon className="h-8 w-8 flex-shrink-0 text-accent" aria-hidden="true" />
+    <h3 className="text-xs font-medium leading-snug text-ink sm:text-sm">{title}</h3>
+  </div>
+)
 
 const Skills = () => {
   const { t } = useLanguage();
@@ -46,32 +66,19 @@ const Skills = () => {
 
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {skills.map(({ title, Icon }) => (
-            <div
-              key={title}
-              className="flex flex-col items-center gap-3 rounded-xl border border-line bg-card p-5 text-center transition-all duration-300 hover:border-line-strong hover:shadow-air"
-            >
-              <Icon className="h-8 w-8 flex-shrink-0 text-accent" aria-hidden="true" />
-              <h3 className="text-xs font-medium leading-snug text-ink sm:text-sm">{title}</h3>
-            </div>
+            <TechCard key={title} title={title} Icon={Icon} />
           ))}
         </div>
 
         {/* Tools & Others */}
-        <div className="mt-12 rounded-xl border border-line bg-surface p-6">
-          <h3 className="mb-6 text-center text-lg font-semibold text-ink">
-            {t.skills.toolsHeading}
-          </h3>
+        <h3 className="mb-6 mt-16 text-center text-2xl font-semibold tracking-tight text-ink">
+          {t.skills.toolsHeading}
+        </h3>
 
-          <div className="flex flex-wrap justify-center gap-3">
-            {t.skills.tools.map((tech) => (
-              <span
-                key={tech}
-                className="rounded-lg border border-line bg-card px-4 py-2 font-mono text-xs text-muted transition-colors duration-200 hover:border-line-strong hover:text-ink sm:text-sm"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          {tools.map(({ title, Icon }) => (
+            <TechCard key={title} title={title} Icon={Icon} />
+          ))}
         </div>
       </div>
     </section>
