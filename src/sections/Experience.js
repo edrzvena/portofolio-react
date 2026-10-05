@@ -5,7 +5,8 @@ import { useLanguage } from '../context/LanguageContext';
 // Data non-teks (perusahaan, tanggal) tetap di sini; title & tasks diterjemahkan via
 // t.experience.items (urutan harus sama dengan array ini).
 const experienceMeta = [
-  { company: 'PT. GFC Terpadu', date: 'Nov 2022 - present' },
+  { company: 'PT. Cipta Sistem Karya', date: 'Aug 2026 - present' },
+  { company: 'PT. GFC Terpadu', date: 'Nov 2022 - Jul 2026' },
   { company: 'PT. Usaha Inti Bersama', date: 'Nov 2020 - Mar 2022' },
 ];
 

@@ -9,6 +9,7 @@ import { useLanguage } from '../context/LanguageContext';
 const certificateMeta = [
   { issuer: 'Anthropic', link: 'https://verify.skilljar.com/c/7t6seko3wzra' },
   { issuer: 'Anthropic', link: 'https://verify.skilljar.com/c/v8p393f46h7m' },
+  { issuer: 'freeCodeCamp & Microsoft', link: 'https://www.freecodecamp.org/certification/pedro-widya/foundational-c-sharp-with-microsoft' },
 ];
 
 const Certificates = () => {

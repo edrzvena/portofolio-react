@@ -7,7 +7,13 @@ import resumeFile from '../assets/files/PEDRO WIDYADHARTA CIADY.pdf';
 import { useLanguage } from '../context/LanguageContext';
 
 // Value statistik tetap (non-teks); label-nya diterjemahkan via t.hero.stats (urutan harus sama).
-const statValues = ['5+', '2', '12'];
+const statValues = ['5+', '3', '26'];
+
+// Tombol Download CV disembunyikan sementara; set ke true untuk menampilkannya lagi.
+const SHOW_CV_DOWNLOAD = false;
+
+// Dijaga sinkron dengan stack di CodeCard.
+const heroStack = ['JavaScript', 'TypeScript', 'C#', '.NET', 'React', 'Express', 'Tailwind', 'Bootstrap', 'PostgreSQL', 'SQL Server'];
 
 const Hero = ({ scrollToSection }) => {
   const { t } = useLanguage();
@@ -43,17 +49,24 @@ const Hero = ({ scrollToSection }) => {
           </h1>
 
           <p className="mt-5 font-mono text-sm text-muted">
-            JavaScript <span className="text-line-strong">/</span> TypeScript <span className="text-line-strong">/</span> React <span className="text-line-strong">/</span> Express <span className="text-line-strong">/</span> Tailwind <span className="text-line-strong">/</span> PostgreSQL
+            {heroStack.map((tech, i) => (
+              <React.Fragment key={tech}>
+                {i > 0 && <> <span className="text-line-strong">/</span> </>}
+                {tech}
+              </React.Fragment>
+            ))}
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
             <Button onClick={() => scrollToSection('projects')} className="px-6 py-3">
               {t.hero.viewProjects}
             </Button>
-            <Button as="a" href={resumeFile} target="_blank" rel="noopener noreferrer" variant="secondary" className="px-6 py-3">
-              <span>{t.hero.downloadCV}</span>
-              <FiDownload className="h-4 w-4" />
-            </Button>
+            {SHOW_CV_DOWNLOAD && (
+              <Button as="a" href={resumeFile} target="_blank" rel="noopener noreferrer" variant="secondary" className="px-6 py-3">
+                <span>{t.hero.downloadCV}</span>
+                <FiDownload className="h-4 w-4" />
+              </Button>
+            )}
           </div>
 
           {/* Honest stats */}

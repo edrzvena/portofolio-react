@@ -32,6 +32,16 @@ const id = {
     heading: 'Pengalaman',
     items: [
       {
+        title: 'Web Developer',
+        tasks: [
+          'Melakukan monitoring aplikasi web secara harian untuk memastikan ketersediaan, stabilitas, dan performa sistem tetap sesuai standar operasional.',
+          'Menganalisis log aplikasi melalui Grafana guna mengidentifikasi error dan anomali sejak dini serta mendukung proses troubleshooting.',
+          'Memantau kondisi layanan dan pod pada cluster Kubernetes untuk memastikan aplikasi berjalan secara optimal.',
+          'Melaksanakan pemeliharaan (maintenance) aplikasi web secara berkala guna menjaga keandalan dan kelangsungan layanan.',
+          'Mengembangkan dan menyempurnakan fitur aplikasi web menggunakan .NET sesuai dengan kebutuhan bisnis dan pengguna.',
+        ],
+      },
+      {
         title: 'Marketing Support',
         tasks: [
           'Menyusun dan memonitor KPI toko sebagai instrumen evaluasi performa operasional cabang, serta menyampaikan laporan hasil penilaian kepada manajemen secara berkala.',
@@ -90,6 +100,11 @@ const id = {
         title: 'Claude Code 101',
         description:
           'AI coding agent workflows: Explore→Plan→Code→Commit, context management, CLAUDE.md, subagents, MCP servers, dan hooks.',
+      },
+      {
+        title: 'Foundational C# with Microsoft',
+        description:
+          'Dasar-dasar C# dengan .NET: variabel & tipe data, logika percabangan, perulangan, array, method, format string, debugging, dan exception handling.',
       },
     ],
   },

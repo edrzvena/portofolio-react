@@ -39,14 +39,23 @@ const CodeCard = () => {
           <span className="text-slate-400">,</span>{' '}
           <span className="text-emerald-300">'TypeScript'</span>
           <span className="text-slate-400">,</span>{' '}
-          <span className="text-emerald-300">'React'</span>
+          <span className="text-emerald-300">'C#'</span>
+          <span className="text-slate-400">,</span>{' '}
+          <span className="text-emerald-300">'.NET'</span>
           <span className="text-slate-400">,</span>
           {'\n'}
-          {'    '}<span className="text-emerald-300">'Express'</span>
+          {'    '}<span className="text-emerald-300">'React'</span>
+          <span className="text-slate-400">,</span>{' '}
+          <span className="text-emerald-300">'Express'</span>
           <span className="text-slate-400">,</span>{' '}
           <span className="text-emerald-300">'Tailwind'</span>
           <span className="text-slate-400">,</span>{' '}
-          <span className="text-emerald-300">'PostgreSQL'</span>
+          <span className="text-emerald-300">'Bootstrap'</span>
+          <span className="text-slate-400">,</span>
+          {'\n'}
+          {'    '}<span className="text-emerald-300">'PostgreSQL'</span>
+          <span className="text-slate-400">,</span>{' '}
+          <span className="text-emerald-300">'SQL Server'</span>
           <span className="text-slate-400">,</span>
           {'\n'}
           {'  '}<span className="text-slate-400">],</span>

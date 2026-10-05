@@ -32,6 +32,16 @@ const en = {
     heading: 'Experience',
     items: [
       {
+        title: 'Web Developer',
+        tasks: [
+          'Conduct daily monitoring of web applications to ensure system availability, stability, and performance remain within operational standards.',
+          'Analyze application logs through Grafana to identify errors and anomalies early and support the troubleshooting process.',
+          'Monitor the condition of services and pods on Kubernetes clusters to ensure applications run optimally.',
+          'Perform routine maintenance on web applications to maintain service reliability and continuity.',
+          'Develop and enhance web application features using .NET in line with business and user requirements.',
+        ],
+      },
+      {
         title: 'Marketing Support',
         tasks: [
           'Compiled and monitored store KPIs as an instrument for evaluating branch operational performance, and reported assessment results to management on a regular basis.',
@@ -90,6 +100,11 @@ const en = {
         title: 'Claude Code 101',
         description:
           'AI coding agent workflows: Explore→Plan→Code→Commit, context management, CLAUDE.md, subagents, MCP servers, and hooks.',
+      },
+      {
+        title: 'Foundational C# with Microsoft',
+        description:
+          'C# fundamentals with .NET: variables & data types, decision logic, loops, arrays, methods, string formatting, debugging, and exception handling.',
       },
     ],
   },
