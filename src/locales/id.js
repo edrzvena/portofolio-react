@@ -12,7 +12,7 @@ const id = {
   },
 
   hero: {
-    quote: 'Omong kosong itu mudah. ​​Tunjukkan kodenya.',
+    quote: 'Omong kosong itu mudah. Tunjukkan kodenya.',
     quoteAuthor: '— Linus Torvalds',
     role: 'Web Developer',
     greeting: 'Hai, saya',
@@ -20,7 +20,6 @@ const id = {
     greetingSuffix: '',
     viewProjects: 'Lihat Proyek',
     downloadCV: 'Unduh CV',
-    stats: ['Proyek', 'Sertifikat', 'Teknologi'],
   },
 
   skills: {

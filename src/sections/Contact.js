@@ -6,7 +6,7 @@ import Reveal from '../components/ui/Reveal';
 import { useLanguage } from '../context/LanguageContext';
 
 const socials = [
-  { name: 'Email', Icon: FiMail, link: 'mailto:widyadharta@gmail.com' },
+  { name: 'widyadharta@gmail.com', Icon: FiMail, link: 'mailto:widyadharta@gmail.com' },
   { name: 'LinkedIn', Icon: FiLinkedin, link: 'https://www.linkedin.com/in/pedro-widyadharta-ciady-773209350' },
   { name: 'GitHub', Icon: FiGithub, link: 'https://github.com/edrzvena' },
 ];

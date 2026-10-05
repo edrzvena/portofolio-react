@@ -20,7 +20,6 @@ const ja = {
     greetingSuffix: ' です',
     viewProjects: 'プロジェクトを見る',
     downloadCV: 'CVをダウンロード',
-    stats: ['プロジェクト', '資格', '技術'],
   },
 
   skills: {

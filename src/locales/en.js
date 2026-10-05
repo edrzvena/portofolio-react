@@ -20,7 +20,6 @@ const en = {
     greetingSuffix: '',
     viewProjects: 'View Projects',
     downloadCV: 'Download CV',
-    stats: ['Projects', 'Certifications', 'Technologies'],
   },
 
   skills: {
