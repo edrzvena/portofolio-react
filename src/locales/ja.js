@@ -14,7 +14,7 @@ const ja = {
   hero: {
     quote: '口先だけなら簡単だ。コードを見せてくれ。',
     quoteAuthor: '— リーナス・トーバルズ',
-    role: '// Web Developer',
+    role: 'Web Developer',
     greeting: 'こんにちは、私は',
     name: 'ペドロ・ウィディア',
     greetingSuffix: ' です',

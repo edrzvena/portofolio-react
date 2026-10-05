@@ -14,7 +14,7 @@ const id = {
   hero: {
     quote: 'Omong kosong itu mudah. ​​Tunjukkan kodenya.',
     quoteAuthor: '— Linus Torvalds',
-    role: '// Web Developer',
+    role: 'Web Developer',
     greeting: 'Hai, saya',
     name: 'Pedro Widya',
     greetingSuffix: '',

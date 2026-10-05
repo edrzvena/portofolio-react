@@ -12,9 +12,6 @@ const statValues = ['5+', '3', '26'];
 // Tombol Download CV disembunyikan sementara; set ke true untuk menampilkannya lagi.
 const SHOW_CV_DOWNLOAD = false;
 
-// Dijaga sinkron dengan stack di CodeCard.
-const heroStack = ['JavaScript', 'TypeScript', 'C#', '.NET', 'React', 'Express', 'Tailwind', 'Bootstrap', 'PostgreSQL', 'SQL Server'];
-
 const Hero = ({ scrollToSection }) => {
   const { t } = useLanguage();
   return (
@@ -42,20 +39,18 @@ const Hero = ({ scrollToSection }) => {
             </div>
           </div>
 
-          <p className="mb-3 font-mono text-sm text-accent">{t.hero.role}</p>
+          {/* Role ditulis sebagai syntax JS: const role = '...'; */}
+          <p className="mb-3 font-mono text-sm">
+            <span className="text-violet-600 dark:text-violet-400">const</span>{' '}
+            <span className="text-accent">role</span>{' '}
+            <span className="text-muted">=</span>{' '}
+            <span className="text-emerald-700 dark:text-emerald-400">'{t.hero.role}'</span>
+            <span className="text-muted">;</span>
+          </p>
 
           <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-ink sm:text-5xl md:text-6xl">
             {t.hero.greeting} <span className="text-accent">{t.hero.name}</span>{t.hero.greetingSuffix}
           </h1>
-
-          <p className="mt-5 font-mono text-sm text-muted">
-            {heroStack.map((tech, i) => (
-              <React.Fragment key={tech}>
-                {i > 0 && <> <span className="text-line-strong">/</span> </>}
-                {tech}
-              </React.Fragment>
-            ))}
-          </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
             <Button onClick={() => scrollToSection('projects')} className="px-6 py-3">

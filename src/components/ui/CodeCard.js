@@ -2,7 +2,7 @@ import React from 'react';
 
 // Kartu snippet kode statis bergaya editor — satu-satunya elemen gelap di situs,
 // sebagai aksen visual "developer" di Hero. Murni dekoratif; tidak ada logika.
-// Konten dijaga sinkron dengan Hero (role + tech stack).
+// Role dijaga sinkron dengan Hero.
 const CodeCard = () => {
   return (
     <div className="overflow-hidden rounded-xl border border-line-strong/40 bg-code shadow-air">
@@ -59,17 +59,6 @@ const CodeCard = () => {
           <span className="text-slate-400">,</span>
           {'\n'}
           {'  '}<span className="text-slate-400">],</span>
-          {'\n'}
-          {'  '}<span className="text-slate-300">focus</span>
-          <span className="text-slate-400">:</span>{' '}
-          <span className="text-emerald-300">'clean, scalable web apps'</span>
-          <span className="text-slate-400">,</span>
-          {'\n'}
-          {'  '}<span className="text-sky-300">build</span>
-          <span className="text-slate-400">:</span>{' '}
-          <span className="text-violet-400">() =&gt;</span>{' '}
-          <span className="text-emerald-300">'ship it ✦'</span>
-          <span className="text-slate-400">,</span>
           {'\n'}
           <span className="text-slate-400">{'}'}</span>
           <span className="text-slate-400">;</span>
