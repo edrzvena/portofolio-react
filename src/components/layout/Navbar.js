@@ -17,8 +17,10 @@ import Logo from '../ui/Logo';
 const Navbar = ({ activeSection, scrollToSection, isMenuOpen, setIsMenuOpen }) => {
   const { t } = useLanguage();
 
+  // pr-[--scroll-lock-gap]: header fixed tidak ikut padding body, jadi dikompensasi sendiri saat
+  // scroll dikunci oleh pop up maximize CodeCard (lihat index.css).
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-page/80 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-page/80 pr-[var(--scroll-lock-gap,0px)] backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-8 lg:px-16">
         {/* Kiri: logo / nama */}
         <button

@@ -36,6 +36,10 @@
   html { color-scheme: light; }
   html.dark { color-scheme: dark; }
 
+  /* Saat scroll dikunci (pop up maximize di CodeCard), scrollbar hilang; padding selebar scrollbar
+     menjaga konten tidak bergeser. --scroll-lock-gap di-set oleh CodeCard, default 0. */
+  body { padding-right: var(--scroll-lock-gap, 0px); }
+
   /* Transisi halus saat ganti tema */
   body,
   body * {
