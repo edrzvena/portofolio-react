@@ -101,8 +101,10 @@ const Hero = ({ scrollToSection }) => {
           </div>
         </div>
 
-        {/* Code card */}
-        <div className="hidden lg:block">
+        {/* Code card — tampil di semua ukuran layar (di HP/tablet turun ke bawah teks).
+            min-w-0 supaya item grid tidak melebar mengikuti baris kode terpanjang;
+            baris yang kepanjangan di-scroll horizontal di dalam <pre> CodeCard. */}
+        <div className="min-w-0">
           <CodeCard />
         </div>
       </div>
