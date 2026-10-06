@@ -29,8 +29,10 @@ const ICON_BOUNCE = {
 };
 
 // Satu-satunya item taskbar yang berfungsi: membuka/me-restore/meminimize jendela developer.js.
-const AppButton = ({ status, onClick }) => (
+// `buttonRef` dipakai CodeCard untuk mengukur posisi ikon (tujuan animasi minimize).
+const AppButton = ({ status, onClick, buttonRef }) => (
   <motion.button
+    ref={buttonRef}
     type="button"
     aria-label={BUTTON_LABEL[status]}
     title={BUTTON_LABEL[status]}
@@ -59,7 +61,7 @@ const AppButton = ({ status, onClick }) => (
 // File Explorer, VS Code) dan system tray di kanan. Kotak Search menyusut bila ruangnya sempit
 // (minimal tetap muat ikon, tulisan "Search" & ilustrasi). Task View, File Explorer & bahasa input
 // disembunyikan di HP dan di layar lg (kolom CodeCard cuma ±424px), tampil lagi di xl.
-const Taskbar = ({ status, onAppClick }) => (
+const Taskbar = ({ status, onAppClick, appButtonRef }) => (
   <div className="mt-3 flex h-12 items-center rounded-lg border border-white/10 bg-code px-1.5 shadow-air">
     <div className="flex-1"></div>
 
@@ -85,7 +87,7 @@ const Taskbar = ({ status, onAppClick }) => (
         <FcFolder className="h-5 w-5" />
       </TaskbarItem>
 
-      <AppButton status={status} onClick={onAppClick} />
+      <AppButton status={status} onClick={onAppClick} buttonRef={appButtonRef} />
     </div>
 
     <div className="flex flex-1 justify-end">

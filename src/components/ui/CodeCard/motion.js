@@ -3,27 +3,45 @@
 // Masuk pakai spring (memantul halus), keluar pakai ease yang mempercepat di akhir.
 export const SPRING = { type: 'spring', stiffness: 300, damping: 28, mass: 0.9 };
 const EASE_IN = [0.4, 0, 1, 1];
-const EASE_IN_OUT = [0.4, 0, 0.2, 1];
+// Minimize ala Windows: langsung bergerak cepat begitu diklik, lalu melambat halus saat masuk ke ikon.
+const EASE_OUT_QUICK = [0.2, 0, 0, 1];
 const FADE_IN = { duration: 0.2, ease: 'easeOut' };
+
+// Pasang sebagai prop `onUpdate` pada motion element untuk menjalankan animasinya di main thread.
+// Alasan: animasi opacity/transform yang dijalankan framer-motion lewat GPU (Web Animations API)
+// dibatalkan di akhir sebelum nilai akhirnya sempat ditulis, sehingga elemen sempat tampil satu frame
+// dengan nilai awalnya (jendela "berkedip" penuh di akhir animasi minimize). Framer otomatis tidak
+// memakai GPU bila elemen punya `onUpdate`, dan di main thread nilainya ditulis langsung tiap frame.
+export const RUN_ON_MAIN_THREAD = () => {};
 
 // Satu variant per status jendela (lihat hooks/useAppWindow). visibility:hidden dipasang setelah
 // animasi keluar selesai, sehingga jendela tak bisa diklik tapi tetap memakan ruang di layout
 // (taskbar di bawahnya tidak bergeser).
+//
+// `minimized` menerima `custom` berupa fungsi yang mengukur jarak dari tepi bawah-tengah jendela ke
+// ikon aplikasi di taskbar (diukur saat animasi dimulai), sehingga jendela mengecil masuk ke ikonnya
+// seperti di Windows. Saat dibuka lagi, `open` membawanya kembali dari posisi ikon tersebut.
 export const windowVariants = {
   open: {
     opacity: 1,
+    x: 0,
     y: 0,
     scale: 1,
     visibility: 'visible',
     transition: { ...SPRING, opacity: FADE_IN },
   },
-  minimized: {
+  minimized: (measureOffsetToTaskbarIcon) => ({
     opacity: 0,
-    y: 80,
-    scale: 0.35,
-    transition: { duration: 0.35, ease: EASE_IN_OUT },
+    ...measureOffsetToTaskbarIcon(),
+    scale: 0.1,
+    transition: {
+      duration: 0.3,
+      ease: EASE_OUT_QUICK,
+      // Memudar di paruh akhir, saat jendela sudah kecil dan hampir sampai di ikon.
+      opacity: { duration: 0.16, delay: 0.12, ease: 'easeIn' },
+    },
     transitionEnd: { visibility: 'hidden' },
-  },
+  }),
   closed: {
     opacity: 0,
     scale: 0.94,

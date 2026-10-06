@@ -7,7 +7,7 @@ import useScrollLock from '../../../hooks/useScrollLock';
 import { DEVELOPER_CODE_FULL } from '../../../constants/developerCode';
 import CodeBlock from './CodeBlock';
 import TitleBar from './TitleBar';
-import { backdropVariants, overlayVariants, panelVariants } from './motion';
+import { RUN_ON_MAIN_THREAD, backdropVariants, overlayVariants, panelVariants } from './motion';
 
 // Pop up jendela yang di-maximize, berisi developer.js versi lengkap.
 // Ditutup lewat Restore, klik backdrop, atau Esc. Selama terbuka: scroll halaman dikunci dan fokus
@@ -44,6 +44,7 @@ const MaximizedWindow = ({ isOpen, onRestore, onMinimize, onClose }) => {
             aria-modal="true"
             aria-label="developer.js — maximized"
             variants={panelVariants}
+            onUpdate={RUN_ON_MAIN_THREAD}
             className="relative w-full max-w-4xl overflow-hidden rounded-xl border border-white/10 bg-code shadow-2xl outline-none will-change-transform"
           >
             <TitleBar isMaximized onMinimize={onMinimize} onToggleMaximize={onRestore} onClose={onClose} />
