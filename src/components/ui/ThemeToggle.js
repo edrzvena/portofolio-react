@@ -2,7 +2,7 @@ import React from 'react';
 import { FiSun, FiMoon } from 'react-icons/fi';
 import { useTheme } from '../../context/ThemeContext';
 
-// Tombol ganti tema gelap/terang — ikon matahari saat gelap (klik ke terang),
+// Tombol ganti tema gelap/terang: ikon matahari saat gelap (klik ke terang),
 // ikon bulan saat terang (klik ke gelap). Ditaruh di navbar sebelah pemilih bahasa.
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();

@@ -13,7 +13,7 @@ const en = {
 
   hero: {
     quote: 'Talk is cheap. Show me the code.',
-    quoteAuthor: '— Linus Torvalds',
+    quoteAuthor: '// Linus Torvalds',
     role: 'Web Developer',
     greeting: "Hi, I'm",
     name: 'Pedro Widya',
@@ -126,7 +126,7 @@ const en = {
           'A web app that explains code syntax using Claude AI: choose your language and get an explanation for each block of logic.',
       },
       {
-        title: 'POS Cashier — Point of Sale Web App',
+        title: 'POS Cashier: Point of Sale Web App',
         description:
           'Built a web-based Point of Sale (POS) cashier app to support daily sales transactions for cafe/retail businesses, using React and Supabase.',
       },

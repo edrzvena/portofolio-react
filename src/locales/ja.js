@@ -13,7 +13,7 @@ const ja = {
 
   hero: {
     quote: '口先だけなら簡単だ。コードを見せてくれ。',
-    quoteAuthor: '— リーナス・トーバルズ',
+    quoteAuthor: '// リーナス・トーバルズ',
     role: 'Web Developer',
     greeting: 'こんにちは、私は',
     name: 'ペドロ・ウィディア',
@@ -126,7 +126,7 @@ const ja = {
           'Claude AI モデルでコードの構文を説明するウェブアプリ。言語を選ぶと、ロジックのブロックごとに解説が得られる。',
       },
       {
-        title: 'POS Cashier — Point of Sale Web App',
+        title: 'POS Cashier: Point of Sale Web App',
         description:
           'React と Supabase を用いて、カフェ／小売業の日次販売取引を支援するウェブベースのPOS（レジ）アプリを構築。',
       },

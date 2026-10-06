@@ -18,7 +18,7 @@ const DATE_LOCALE = {
 
 // Pojok kanan taskbar Windows 11: panah ikon tersembunyi, bahasa input, wifi/volume/baterai,
 // lalu jam di atas tanggal (berjalan sungguhan). Semuanya hiasan tanpa aksi.
-// Bahasa input hanya muncul bila ruangnya cukup (sm–md satu kolom, xl ke atas).
+// Bahasa input hanya muncul bila ruangnya cukup (sm sampai md satu kolom, xl ke atas).
 const SystemTray = () => {
   const now = useClock();
   const { language } = useLanguage();

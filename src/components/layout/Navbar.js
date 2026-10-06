@@ -7,10 +7,10 @@ import ThemeToggle from '../ui/ThemeToggle';
 import Logo from '../ui/Logo';
 
 // Header full-width sticky bergaya glassmorphism terang (backdrop blur, putih 80%,
-// border bawah tipis) — sesuai DESIGN.md & mockup.
+// border bawah tipis), sesuai DESIGN.md & mockup.
 // - Kiri: logo/nama sebagai syntax pemanggilan fungsi JS: pedroWidya()
-// - Tengah: nav links (font mono) — active dikasih warna aksen + underline biru
-// - Kanan: pemilih bahasa (LanguageSwitcher — globe + kode bahasa aktif, dropdown EN/ID/JP)
+// - Tengah: nav links (font mono); active dikasih warna aksen + underline biru
+// - Kanan: pemilih bahasa (LanguageSwitcher: globe + kode bahasa aktif, dropdown EN/ID/JP)
 // Di bawah lg jadi hamburger menu (panel dropdown di bawah header).
 // Catatan: id section tetap bahasa Inggris lowercase (skills, experience, …) karena dipakai
 // sebagai id elemen & target scroll; label tampilannya diambil dari t.nav[id].

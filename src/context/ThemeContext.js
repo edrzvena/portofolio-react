@@ -31,7 +31,7 @@ export const ThemeProvider = ({ children }) => {
     try {
       localStorage.setItem('theme', theme);
     } catch (e) {
-      /* localStorage bisa gagal (mode privasi) — abaikan saja. */
+      /* localStorage bisa gagal (mode privasi), abaikan saja. */
     }
   }, [theme]);
 

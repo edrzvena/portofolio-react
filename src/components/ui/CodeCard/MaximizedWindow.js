@@ -42,7 +42,7 @@ const MaximizedWindow = ({ isOpen, onRestore, onMinimize, onClose }) => {
             tabIndex={-1}
             role="dialog"
             aria-modal="true"
-            aria-label="developer.js — maximized"
+            aria-label="developer.js (maximized)"
             variants={panelVariants}
             onUpdate={RUN_ON_MAIN_THREAD}
             className="relative w-full max-w-4xl overflow-hidden rounded-xl border border-white/10 bg-code shadow-2xl outline-none will-change-transform"

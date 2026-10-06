@@ -55,7 +55,7 @@ export const DEVELOPER_CODE_FULL = [
   property('name', 'Pedro Widya'),
   property('role', 'Web Developer'),
   property('currentlyAt', 'PT. Cipta Sistem Karya'),
-  property('education', 'Informatics Engineering — Universitas Buddhi Dharma'),
+  property('education', 'Informatics Engineering, Universitas Buddhi Dharma'),
   ...STACK,
   openBlock('tools', '['),
   stringRow(['Docker', 'Kubernetes', 'Grafana', 'Azure']),

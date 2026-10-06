@@ -13,7 +13,7 @@ const id = {
 
   hero: {
     quote: 'Omong kosong itu mudah. Tunjukkan kodenya.',
-    quoteAuthor: '— Linus Torvalds',
+    quoteAuthor: '// Linus Torvalds',
     role: 'Web Developer',
     greeting: 'Hai, saya',
     name: 'Pedro Widya',
@@ -126,7 +126,7 @@ const id = {
           'Web app yang bisa jelasin syntax code pakai model Claude AI, pilih bahasanya, dapat penjelasan per blok logika dalam bahasa Indonesia.',
       },
       {
-        title: 'POS Cashier — Point of Sale Web App',
+        title: 'POS Cashier: Point of Sale Web App',
         description:
           'Membangun aplikasi kasir (Point of Sale) berbasis web untuk mendukung operasional transaksi penjualan harian pada bisnis cafe/retail menggunakan teknologi React dan Supabase.',
       },
